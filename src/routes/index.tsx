@@ -11,7 +11,7 @@ function Index() {
       <div className="exact-template-home__stage">
         <img
           className="exact-template-home__image exact-template-home__image--final"
-          src="/assets/da-mafia/home-hero-brasil-rolex-20260604.png?v=hero-logo-sem-rosto-20260604"
+          src="/assets/da-mafia/home-hero-brasil-rolex-20260604.png?v=hero-inicio-nova-20260605"
           alt="DA MAFIA IMPORTS - Produtos importados, rifas exclusivas e ofertas selecionadas"
         />
 
