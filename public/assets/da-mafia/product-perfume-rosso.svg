@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520" role="img" aria-label="Perfume Rosso Drop">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff1bd"/>
+      <stop offset=".48" stop-color="#c99a3d"/>
+      <stop offset="1" stop-color="#6d430d"/>
+    </linearGradient>
+    <linearGradient id="red" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#501018"/>
+      <stop offset=".5" stop-color="#150205"/>
+      <stop offset="1" stop-color="#b91623"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="28" stdDeviation="20" flood-color="#000" flood-opacity=".75"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <path d="M210 150h100v44H210z" fill="url(#gold)" rx="8"/>
+    <path d="M229 104h62v50h-62z" fill="#080808" stroke="url(#gold)" stroke-width="8" rx="9"/>
+    <path d="M166 190h188c22 0 40 18 40 40v153c0 35-28 63-63 63H189c-35 0-63-28-63-63V230c0-22 18-40 40-40Z" fill="url(#red)" stroke="url(#gold)" stroke-width="10"/>
+    <path d="M181 224c37 18 121 18 158 0v159c0 18-15 33-33 33h-92c-18 0-33-15-33-33V224Z" fill="#090909" opacity=".76"/>
+    <path d="M207 267h106v88H207z" fill="#070707" stroke="#b91623" stroke-width="6" rx="4"/>
+    <text x="260" y="309" text-anchor="middle" fill="#f2d38a" font-family="Arial Black, Impact, sans-serif" font-size="28">ROSSO</text>
+    <text x="260" y="334" text-anchor="middle" fill="#b91623" font-family="Arial, sans-serif" font-size="15" font-weight="900">DROP</text>
+    <path d="M201 213c41 22 77 22 118 0" fill="none" stroke="#f2d38a" stroke-width="3" opacity=".52"/>
+  </g>
+</svg>

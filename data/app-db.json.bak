@@ -1,0 +1,69 @@
+{
+  "users": [
+    {
+      "id": "user-admin",
+      "name": "Admin DA MAFIA",
+      "email": "admin@damafiaimports.com",
+      "phone": "(22) 99770-1093",
+      "cpf": "000.000.000-00",
+      "role": "admin",
+      "passwordHash": "172f527fdda6a5e889c875cdd4214e1d:423dadb8abedc40c832909f154e877b4a37b4516b44f54989c7368e6a81540f0e3da17306aaca140fa237ef28e2aed5f66e05e81ea6594a30a8a2d6986ba9b72"
+    },
+    {
+      "id": "user-demo",
+      "name": "JoÃƒÂ£o da Silva",
+      "email": "joao@example.com",
+      "phone": "(11) 98888-0001",
+      "cpf": "111.222.333-44",
+      "role": "customer",
+      "passwordHash": "d91ce1d731755a3fbb36db3df7c0c872:172b2186c5ecffb970d468b8d1e1ba3f154291900b2e890d65432886bc369f113d06e81eeedf44519b287a0c0751e5c7b378566075dd4c155172c5426463d064"
+    },
+    {
+      "id": "user-109a47d121be8b9c",
+      "name": "TIAGO SILVA DOS REIS",
+      "email": "ogaitjunior@gmail.com",
+      "phone": "71991427737",
+      "cpf": "849.239.115-49",
+      "role": "customer",
+      "passwordHash": "7d1652cc9f536ff57f5453a2d32813b0:39b8348d0532037102ff81bb741ca1cc3444adbd4098e89fdf0a6104f6a5fafe644024e24866216d0d67ecb29b64268a43a3e253a1a151c1babbdc193ec2e042"
+    }
+  ],
+  "sessions": [
+    {
+      "id": "182c6bc3f4294c92246fe79d0288bc73adddbacf9d699277d68284825c500cd3",
+      "userId": "user-admin",
+      "expiresAt": "2026-06-11T23:20:29.468Z"
+    },
+    {
+      "id": "67a3a9b7cdaa26e7367bfa9c2447850f1c0bd81eabf90bcf4b981c7fdd3b119c",
+      "userId": "user-admin",
+      "expiresAt": "2026-06-11T23:23:36.428Z"
+    },
+    {
+      "id": "45cbd4758936f18ae8cd576ed0375fe6a2f638e3f4b1787bafa021b97e890edb",
+      "userId": "user-admin",
+      "expiresAt": "2026-06-11T23:27:45.570Z"
+    },
+    {
+      "id": "ae7e2af6dddc7255c21c0c34630902f5f356226b044400daeef65bff9bcd00ff",
+      "userId": "user-admin",
+      "expiresAt": "2026-06-11T23:30:37.519Z"
+    },
+    {
+      "id": "1443945f6e943a525d9c211d3f7680cf4163a7202a9c675e76aee5db0dbd1049",
+      "userId": "user-admin",
+      "expiresAt": "2026-06-11T23:33:12.214Z"
+    }
+  ],
+  "raffles": [],
+  "deletedRaffleIds": [
+    "r1-54baa8"
+  ],
+  "products": [],
+  "deletedProductIds": [
+    "p3"
+  ],
+  "winners": [],
+  "tickets": [],
+  "orders": []
+}

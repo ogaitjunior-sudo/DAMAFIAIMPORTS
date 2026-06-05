@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520" role="img" aria-label="Bone Omerta Black">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff1bd"/>
+      <stop offset=".48" stop-color="#c99a3d"/>
+      <stop offset="1" stop-color="#6a430e"/>
+    </linearGradient>
+    <linearGradient id="cap" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#242424"/>
+      <stop offset=".52" stop-color="#050505"/>
+      <stop offset="1" stop-color="#171717"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="28" stdDeviation="20" flood-color="#000" flood-opacity=".75"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <path d="M119 284c13-99 73-160 156-160 77 0 128 58 143 160H119Z" fill="url(#cap)" stroke="url(#gold)" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M120 284c91 31 200 31 327 8 29-5 53 17 54 46-83 29-209 40-381 25-27-2-45-26-39-53 5-19 18-28 39-26Z" fill="#090909" stroke="url(#gold)" stroke-width="8"/>
+    <path d="M196 139c23 45 32 92 28 142M276 124c16 52 17 105 2 158M354 157c-16 39-20 80-11 123" fill="none" stroke="#fff" stroke-width="4" opacity=".1"/>
+    <path d="M224 211h91v54h-91z" fill="#050505" stroke="url(#gold)" stroke-width="5" rx="6"/>
+    <text x="270" y="248" text-anchor="middle" fill="#f2d38a" font-family="Arial Black, Impact, sans-serif" font-size="29">DM</text>
+  </g>
+</svg>

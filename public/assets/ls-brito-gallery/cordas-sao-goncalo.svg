@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-labelledby="title desc">
+  <title id="title">Kit de encordoamentos Sao Goncalo 011-029</title>
+  <desc id="desc">Arte de embalagem verde para kit com tres encordoamentos de cavaquinho.</desc>
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="42%" r="65%">
+      <stop offset="0" stop-color="#f9d36a" stop-opacity=".75"/>
+      <stop offset=".35" stop-color="#1d6b23" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#041006"/>
+    </radialGradient>
+    <linearGradient id="pack" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#176a25"/>
+      <stop offset=".52" stop-color="#0c3f18"/>
+      <stop offset="1" stop-color="#06220d"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffdf74"/>
+      <stop offset=".5" stop-color="#f1ae1d"/>
+      <stop offset="1" stop-color="#7b4a08"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="22" stdDeviation="18" flood-color="#000" flood-opacity=".55"/>
+    </filter>
+    <pattern id="texture" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M0 20h44M20 0v44" stroke="#ffffff" stroke-opacity=".04" stroke-width="1"/>
+      <path d="M-8 44 44-8M0 52 52 0" stroke="#ffffff" stroke-opacity=".03" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="900" height="620" fill="#080604"/>
+  <rect width="900" height="620" fill="url(#glow)" opacity=".86"/>
+  <path d="M42 462C180 322 310 380 450 240s300-88 414-196" fill="none" stroke="#dca642" stroke-opacity=".28" stroke-width="3"/>
+  <path d="M-20 535C180 372 320 458 510 294s290-96 430-188" fill="none" stroke="#f3bf47" stroke-opacity=".16" stroke-width="2"/>
+
+  <g filter="url(#shadow)" transform="translate(132 52)">
+    <path d="M36 0h560c20 0 36 16 36 36v472c0 20-16 36-36 36H36c-20 0-36-16-36-36V36C0 16 16 0 36 0Z" fill="url(#pack)" stroke="#f4c24b" stroke-opacity=".75" stroke-width="3"/>
+    <path d="M0 0h632v544H0z" fill="url(#texture)" opacity=".95"/>
+    <path d="M36 36h560v472H36z" fill="none" stroke="#ffffff" stroke-opacity=".08"/>
+
+    <circle cx="520" cy="88" r="28" fill="#f8f5e8"/>
+    <text x="316" y="128" fill="#f4f1df" font-family="Georgia, serif" font-size="72" font-weight="800" text-anchor="middle" letter-spacing="1">SAO GONCALO</text>
+    <text x="502" y="158" fill="#f4f1df" font-family="Arial, sans-serif" font-size="20" font-weight="700">Desde 1945</text>
+
+    <g transform="translate(322 156)">
+      <circle cx="154" cy="72" r="61" fill="#193d18" stroke="url(#gold)" stroke-width="8"/>
+      <circle cx="154" cy="72" r="45" fill="#c08a27"/>
+      <text x="154" y="62" fill="#173812" font-family="Arial, sans-serif" font-size="18" font-weight="900" text-anchor="middle">PACOTE COM</text>
+      <text x="154" y="92" fill="#fff4b8" font-family="Arial, sans-serif" font-size="34" font-weight="900" text-anchor="middle">3 JOGOS</text>
+    </g>
+
+    <g transform="translate(84 172)">
+      <text x="0" y="92" fill="#f7f2dd" font-family="Arial Black, Arial, sans-serif" font-size="108" font-weight="900">011</text>
+      <text x="0" y="208" fill="#f7f2dd" font-family="Arial Black, Arial, sans-serif" font-size="108" font-weight="900">029</text>
+      <text x="2" y="276" fill="#f7f2dd" font-family="Arial, sans-serif" font-size="34" font-weight="900">CAVAQUINHO</text>
+      <text x="2" y="316" fill="#f7f2dd" font-family="Arial, sans-serif" font-size="34" font-weight="900">TENSAO MEDIA</text>
+      <text x="2" y="362" fill="#d8d8ca" font-family="Arial, sans-serif" font-size="19" font-weight="700">NIQUEL E ACO INOX</text>
+      <text x="2" y="390" fill="#d8d8ca" font-family="Arial, sans-serif" font-size="19" font-weight="700">COM BOLINHA</text>
+    </g>
+
+    <g transform="translate(385 222)">
+      <ellipse cx="86" cy="242" rx="72" ry="12" fill="#000" opacity=".32"/>
+      <path d="M102 36c32 22 48 56 46 102-3 72-44 123-48 164l-34 1c-1-41-40-91-42-164-2-46 14-81 46-103 9-6 23-6 32 0Z" fill="#2d3024" stroke="#f2e6a0" stroke-width="6"/>
+      <circle cx="85" cy="54" r="22" fill="#f8d059"/>
+      <path d="M85 38v118" stroke="#241b0a" stroke-width="7" stroke-linecap="round"/>
+      <path d="M54 112h62" stroke="#f8d059" stroke-width="7" stroke-linecap="round"/>
+      <path d="M44 146h82" stroke="#f8d059" stroke-width="7" stroke-linecap="round"/>
+      <path d="M68 176h36l-7 84H75Z" fill="#a96f1f" stroke="#f8d059" stroke-width="4"/>
+      <path d="M70 256h32" stroke="#f8d059" stroke-width="7" stroke-linecap="round"/>
+      <path d="M73 64c-22 12-42 30-56 53" stroke="#f7f2dd" stroke-width="10" fill="none" stroke-linecap="round"/>
+      <path d="M95 64c22 12 42 30 56 53" stroke="#f7f2dd" stroke-width="10" fill="none" stroke-linecap="round"/>
+    </g>
+
+    <g transform="translate(454 454)">
+      <rect width="116" height="42" rx="10" fill="#f8f1db"/>
+      <text x="58" y="17" fill="#0a3d15" font-family="Arial, sans-serif" font-size="12" font-weight="900" text-anchor="middle">GRATIS</text>
+      <text x="58" y="34" fill="#0a3d15" font-family="Arial, sans-serif" font-size="12" font-weight="900" text-anchor="middle">1 PALHETA</text>
+    </g>
+  </g>
+</svg>

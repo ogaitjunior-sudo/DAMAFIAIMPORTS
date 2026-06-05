@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520" role="img" aria-label="Corrente Capo Gold">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff1bd"/>
+      <stop offset=".42" stop-color="#d5aa54"/>
+      <stop offset=".72" stop-color="#8a5c18"/>
+      <stop offset="1" stop-color="#f7d98e"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="28" stdDeviation="20" flood-color="#000" flood-opacity=".75"/>
+    </filter>
+  </defs>
+  <rect width="520" height="520" fill="none"/>
+  <g filter="url(#shadow)" fill="none" stroke="url(#gold)" stroke-width="26" stroke-linecap="round">
+    <path d="M132 160c82-63 174-63 256 0"/>
+    <path d="M388 160c27 22 41 52 41 88 0 93-74 174-169 174S91 341 91 248c0-36 14-66 41-88"/>
+  </g>
+  <g filter="url(#shadow)">
+    <path d="M212 300h96l35 96H177l35-96Z" fill="#070707" stroke="url(#gold)" stroke-width="9" stroke-linejoin="round"/>
+    <path d="M226 318h68l18 49H208l18-49Z" fill="url(#gold)" opacity=".9"/>
+    <text x="260" y="357" text-anchor="middle" fill="#050505" font-family="Arial Black, Impact, sans-serif" font-size="31">DM</text>
+  </g>
+  <g fill="none" stroke="#fff" stroke-width="3" opacity=".16">
+    <path d="M166 139c61-30 127-30 188 0"/>
+    <path d="M125 221c-3 97 59 158 135 158s138-61 135-158"/>
+  </g>
+</svg>

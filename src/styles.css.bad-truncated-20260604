@@ -1,0 +1,413 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Playfair Display", "Cormorant Garamond", serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-wood: var(--wood);
+  --color-cream: var(--cream);
+
+  --shadow-gold: 0 10px 40px -10px color-mix(in oklab, var(--gold) 45%, transparent);
+  --shadow-elegant: 0 20px 60px -20px oklch(0 0 0 / 0.6);
+}
+
+@layer components {
+  .my-numbers-page {
+    position: relative;
+    min-height: calc(100vh - 5rem);
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 14% 10%, oklch(0.56 0.12 72 / 0.22), transparent 28rem),
+      radial-gradient(circle at 86% 18%, oklch(0.78 0.15 82 / 0.18), transparent 32rem),
+      linear-gradient(135deg, #050302 0%, #120a05 52%, #030202 100%);
+  }
+
+  .my-numbers-page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      radial-gradient(circle, oklch(0.84 0.16 82 / 0.28) 0 1px, transparent 1px),
+      linear-gradient(115deg, transparent 0 45%, oklch(0.78 0.14 82 / 0.12) 48%, transparent 52%);
+    background-size: 110px 110px, 100% 100%;
+    opacity: 0.5;
+  }
+
+  .my-numbers-shell {
+    position: relative;
+    z-index: 1;
+    width: min(100% - 2rem, 82rem);
+    margin: 0 auto;
+    padding: 3.5rem 0;
+  }
+
+  .my-numbers-hero,
+  .my-numbers-card,
+  .my-numbers-toolbar,
+  .my-numbers-security,
+  .whatsapp-gate-card {
+    border: 1px solid oklch(0.72 0.15 82 / 0.35);
+    background: linear-gradient(145deg, oklch(0.11 0.02 58 / 0.82), oklch(0.06 0.01 45 / 0.88));
+    box-shadow:
+      0 0 0 1px oklch(0.95 0.1 88 / 0.05) inset,
+      0 1.25rem 4rem oklch(0.02 0.02 35 / 0.72);
+    backdrop-filter: blur(18px);
+  }
+
+  .my-numbers-hero {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 1.5rem;
+    overflow: hidden;
+    border-radius: 1.4rem;
+    padding: clamp(1.4rem, 4vw, 3rem);
+  }
+
+  .my-numbers-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: max-content;
+    border: 1px solid oklch(0.78 0.15 82 / 0.45);
+    border-radius: 999px;
+    padding: 0.55rem 0.85rem;
+    color: oklch(0.84 0.16 82);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .my-numbers-title {
+    margin-top: 1rem;
+    color: oklch(0.96 0.03 82);
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 0.86;
+  }
+
+  .my-numbers-title span {
+    display: block;
+    color: oklch(0.82 0.16 82);
+    text-shadow: 0 0 32px oklch(0.76 0.14 82 / 0.35);
+  }
+
+  .my-numbers-hero p {
+    max-width: 38rem;
+    color: oklch(0.9 0.02 82 / 0.74);
+    line-height: 1.75;
+  }
+
+  .my-numbers-hero-panel {
+    border: 1px solid oklch(0.72 0.15 82 / 0.24);
+    border-radius: 1rem;
+    padding: 1.2rem;
+    background: oklch(0.05 0.01 45 / 0.52);
+  }
+
+  .my-numbers-stat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid oklch(0.72 0.15 82 / 0.16);
+  }
+
+  .my-numbers-stat:last-child {
+    border-bottom: 0;
+  }
+
+  .my-numbers-stat strong {
+    color: oklch(0.86 0.16 82);
+    font-size: 1.35rem;
+  }
+
+  .my-numbers-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.2rem;
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+
+  .my-numbers-search {
+    position: relative;
+    flex: 1 1 18rem;
+  }
+
+  .my-numbers-search svg {
+    position: absolute;
+    top: 50%;
+    left: 0.9rem;
+    color: oklch(0.84 0.16 82);
+    transform: translateY(-50%);
+  }
+
+  .my-numbers-search input {
+    padding-left: 2.5rem;
+  }
+
+  .my-numbers-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .my-numbers-filter {
+    border: 1px solid oklch(0.72 0.15 82 / 0.32);
+    border-radius: 999px;
+    padding: 0.58rem 0.9rem;
+    background: oklch(0.06 0.01 45 / 0.7);
+    color: oklch(0.9 0.02 82 / 0.78);
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .my-numbers-filter:hover,
+  .my-numbers-filter.active {
+    border-color: oklch(0.84 0.16 82 / 0.82);
+    box-shadow: 0 0 22px oklch(0.76 0.14 82 / 0.22);
+    color: oklch(0.96 0.04 82);
+    transform: translateY(-1px);
+  }
+
+  .my-numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+    gap: 1rem;
+    margin-top: 1.2rem;
+  }
+
+  .my-numbers-card {
+    overflow: hidden;
+    border-radius: 1rem;
+  }
+
+  .my-numbers-card-image {
+    width: 100%;
+    height: 13rem;
+    object-fit: cover;
+    filter: saturate(1.08) contrast(1.05);
+  }
+
+  .my-numbers-card-body {
+    padding: 1rem;
+  }
+
+  .my-numbers-card h2 {
+    color: oklch(0.96 0.03 82);
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    line-height: 1.05;
+  }
+
+  .my-numbers-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border-radius: 999px;
+    padding: 0.35rem 0.65rem;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .my-status-pending {
+    border: 1px solid oklch(0.82 0.16 82 / 0.42);
+    background: oklch(0.45 0.12 82 / 0.14);
+    color: oklch(0.9 0.16 82);
+  }
+
+  .my-status-paid {
+    border: 1px solid oklch(0.74 0.17 145 / 0.42);
+    background: oklch(0.42 0.14 145 / 0.14);
+    color: oklch(0.84 0.18 145);
+  }
+
+  .my-status-confirmed {
+    border: 1px solid oklch(0.7 0.13 235 / 0.46);
+    background: oklch(0.42 0.12 235 / 0.16);
+    color: oklch(0.78 0.14 235);
+  }
+
+  .my-status-canceled {
+    border: 1px solid oklch(0.66 0.2 28 / 0.45);
+    background: oklch(0.38 0.16 28 / 0.16);
+    color: oklch(0.74 0.22 28);
+  }
+
+  .my-numbers-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.9rem;
+  }
+
+  .my-number-chip {
+    border: 1px solid oklch(0.78 0.15 82 / 0.4);
+    border-radius: 0.55rem;
+    padding: 0.35rem 0.5rem;
+    background: oklch(0.05 0.01 45 / 0.72);
+    color: oklch(0.84 0.16 82);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-weight: 800;
+  }
+
+  .my-numbers-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+    margin-top: 1rem;
+  }
+
+  .my-numbers-security {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1.2rem;
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+
+  .my-numbers-security div {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: oklch(0.9 0.02 82 / 0.75);
+  }
+
+  .my-numbers-security svg {
+    color: oklch(0.84 0.16 82);
+  }
+
+  .whatsapp-gate-card {
+    border-radius: 1.2rem;
+    padding: 1rem;
+  }
+
+  .whatsapp-gate-icon {
+    display: grid;
+    place-items: center;
+    width: 3.2rem;
+    height: 3.2rem;
+    margin: 0 auto 1rem;
+    border: 1px solid oklch(0.84 0.16 82 / 0.45);
+    border-radius: 999px;
+    box-shadow: 0 0 28px oklch(0.76 0.14 82 / 0.24);
+    color: oklch(0.84 0.16 82);
+  }
+
+  .my-empty {
+    margin-top: 1.2rem;
+    border: 1px dashed oklch(0.72 0.15 82 / 0.35);
+    border-radius: 1rem;
+    padding: 2rem;
+    background: oklch(0.05 0.01 45 / 0.58);
+    color: oklch(0.9 0.02 82 / 0.68);
+    text-align: center;
+  }
+
+  @media (max-width: 900px) {
+    .my-numbers-shell {
+      width: min(100% - 1rem, 82rem);
+      padding: 1.5rem 0;
+    }
+
+    .my-numbers-hero,
+    .my-numbers-security {
+      grid-template-columns: 1fr;
+    }
+
+    .my-numbers-actions {
+      grid-template-columns: 1fr;
+    }
+
+    .my-numbers-filters {
+      flex-wrap: nowrap;
+      width: 100%;
+      overflow-x: auto;
+      padding-bottom: 0.25rem;
+    }
+
+    .my-numbers-filter {
+      white-space: nowrap;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .collection-reference-hero {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .collection-reference-hero__frame {
+    width: max(100%, 48rem);
+  }
+
+  .collection-reference-hero__frame img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    object-position: center top;
+  }
+
+  .collection-reference-hero__frame::after {
+    display: none;
+    content: none;
+  }
+
+  .collection-reference-hotspot {
+    display: none;
+  }
+
+  .collection-reference-actions {
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    width: min(100% - 1.5rem, 28rem);
+    margin: 1rem auto 0;
+  }
+}

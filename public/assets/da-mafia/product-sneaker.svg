@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520" role="img" aria-label="Sneaker Nero Line">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff1bd"/>
+      <stop offset=".45" stop-color="#c99a3d"/>
+      <stop offset="1" stop-color="#6a430e"/>
+    </linearGradient>
+    <linearGradient id="shoe" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#252525"/>
+      <stop offset=".45" stop-color="#050505"/>
+      <stop offset="1" stop-color="#171717"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="28" stdDeviation="20" flood-color="#000" flood-opacity=".75"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <path d="M102 315c58-8 92-53 127-108 15-24 45-28 68-10l96 75c23 18 55 28 92 29 14 33-5 70-45 78H121c-28-4-40-45-19-64Z" fill="url(#shoe)" stroke="url(#gold)" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M111 319c70 21 221 22 366 5" fill="none" stroke="#f2d38a" stroke-width="7" opacity=".62"/>
+    <path d="M151 363h287c17 0 31-9 39-23" stroke="#fff" stroke-width="5" opacity=".12"/>
+    <path d="M220 220c35 26 72 52 112 78" fill="none" stroke="url(#gold)" stroke-width="9" stroke-linecap="round"/>
+    <path d="M265 214l-48 70M301 235l-48 70M337 258l-48 70" stroke="#fff" stroke-width="5" opacity=".2" stroke-linecap="round"/>
+    <path d="M385 273c-23 12-41 28-54 48" fill="none" stroke="#f2d38a" stroke-width="5" opacity=".5"/>
+  </g>
+</svg>
