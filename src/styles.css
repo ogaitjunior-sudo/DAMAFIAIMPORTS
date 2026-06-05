@@ -11916,11 +11916,11 @@ body:has(.collection-aaa) .site-header + main {
 }
 .collection-reference-hero__frame::after {
   position: absolute;
-  top: 50.75%;
+  top: 55.8%;
   left: 2.35%;
   z-index: 3;
   width: 40.6%;
-  height: 10.7%;
+  height: 11.8%;
   content: "";
   background: linear-gradient( 90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 88%, rgba(0, 0, 0, 0.82) 96%, rgba(0, 0, 0, 0) 100% );
   border-radius: 0.9rem;
@@ -11957,7 +11957,7 @@ body:has(.collection-aaa) .site-header + main {
 }
 .collection-reference-actions {
   position: absolute;
-  top: 51.8%;
+  top: 56.6%;
   left: 4.95%;
   z-index: 4;
   display: grid;
@@ -12044,10 +12044,10 @@ body:has(.collection-aaa) .site-header + main {
     object-position: center top;
   }
   .collection-reference-hero__frame::after {
-    top: 9.3rem;
+    top: 11.55rem;
     left: 2.05rem;
     width: 20.2rem;
-    height: 3.8rem;
+    height: 4.25rem;
   }
   .collection-reference-hotspot {
     display: none;
