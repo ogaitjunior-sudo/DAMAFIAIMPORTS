@@ -1,6 +1,8 @@
 .git
+.vercel
 .vite
 .wrangler
+.output
 node_modules
 dist
 

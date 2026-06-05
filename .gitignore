@@ -1,7 +1,12 @@
 node_modules
 dist
+.output
+.vercel
 .wrangler
 .vite
 .env
 .env.local
 *.log
+public/assets/**/*.before-*
+public/assets/**/*before*
+.vercel
