@@ -225,7 +225,7 @@ function LojaPage() {
         </h1>
         <div className="collection-reference-hero__frame">
           <img
-            src="/assets/da-mafia/colecao.png?v=colecao-nova-final-20260604"
+            src="/assets/da-mafia/colecao.png?v=colecao-bottom-edge-up-20260605"
             alt="Importados e Street Luxury. Produtos selecionados para quem busca exclusividade, estilo e presenca."
           />
           <div className="collection-reference-actions" aria-label="Acoes da colecao">

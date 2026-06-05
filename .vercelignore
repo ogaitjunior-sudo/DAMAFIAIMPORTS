@@ -1,0 +1,10 @@
+.git
+.vite
+.wrangler
+node_modules
+dist
+
+*.log
+
+public/assets/**/*.before-*
+public/assets/**/*before*
