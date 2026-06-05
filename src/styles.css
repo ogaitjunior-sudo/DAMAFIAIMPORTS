@@ -66,6 +66,7 @@
     --shadow-elegant: 0 20px 60px -20px oklch(0 0 0 / 0.6);
   }
 }
+
 @layer base {
   *, ::after, ::before, ::backdrop, ::file-selector-button {
     box-sizing: border-box;
@@ -12512,5 +12513,72 @@ body:has(.collection-aaa) .site-header + main {
       --tw-exit-translate-x: 0;
       --tw-exit-translate-y: 0;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  html:has(.exact-template-home),
+  body:has(.exact-template-home),
+  body:has(.exact-template-home) main {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .exact-template-home {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100vw !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+  }
+
+  .exact-template-home__stage {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100vw !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    line-height: 0 !important;
+  }
+
+  .exact-template-home__stage picture {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100vw !important;
+    height: auto !important;
+    line-height: 0 !important;
+  }
+
+  .exact-template-home__image {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100vw !important;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: center top !important;
+    transform: none !important;
+  }
+
+  .exact-template-actions {
+    top: 35%;
+    left: 50%;
+    width: min(calc(100% - 48px), 310px);
+    transform: translateX(-50%);
+    opacity: 0 !important;
+    pointer-events: auto !important;
+  }
+
+  .exact-template-action {
+    flex: 1 1 0;
+    min-width: 0 !important;
   }
 }

@@ -9,11 +9,17 @@ function Index() {
   return (
     <div className="exact-template-home" aria-label="DA MAFIA IMPORTS">
       <div className="exact-template-home__stage">
-        <img
-          className="exact-template-home__image exact-template-home__image--final"
-          src="/assets/da-mafia/home-hero-brasil-rolex-20260604.png?v=hero-inicio-nova-20260605"
-          alt="DA MAFIA IMPORTS - Produtos importados, rifas exclusivas e ofertas selecionadas"
-        />
+        <picture>
+          <source
+            media="(max-width: 768px)"
+            srcSet="/assets/da-mafia/home-hero-mobile-reference-20260605.png?v=mobile-hero-reference-20260605"
+          />
+          <img
+            className="exact-template-home__image exact-template-home__image--final"
+            src="/assets/da-mafia/home-hero-brasil-rolex-20260604.png?v=hero-inicio-nova-20260605"
+            alt="DA MAFIA IMPORTS - Produtos importados, rifas exclusivas e ofertas selecionadas"
+          />
+        </picture>
 
         <div className="exact-template-actions" aria-label="Acoes principais">
           <Link className="exact-template-action exact-template-action--primary" to="/loja">
