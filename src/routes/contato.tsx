@@ -1,5 +1,18 @@
+import type { ReactNode } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { Crown, Gem, Headphones, Instagram, LockKeyhole, Mail, MapPin, MessageCircle, Send, ShieldCheck, Truck } from "lucide-react";
+import {
+  Crown,
+  Gem,
+  Headphones,
+  Instagram,
+  LockKeyhole,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Send,
+  ShieldCheck,
+  Truck,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -16,7 +29,7 @@ const contacts = [
     icon: MessageCircle,
     label: "WhatsApp",
     value: "(22) 99770-1093",
-    detail: "Atendimento rápido e direto",
+    detail: "Atendimento r\u00e1pido e direto",
     href: "https://wa.me/5522997701093",
   },
   {
@@ -35,10 +48,10 @@ const contacts = [
   },
   {
     icon: MapPin,
-    label: "Localização",
+    label: "Localiza\u00e7\u00e3o",
     value: "Cabo Frio, RJ",
     detail: "Atendemos todo o Brasil",
-    href: "#",
+    href: "https://www.google.com/maps/search/?api=1&query=Cabo%20Frio%2C%20RJ",
   },
 ];
 
@@ -46,8 +59,8 @@ const trustItems = [
   {
     icon: Crown,
     label: "Perfil oficial",
-    title: "DA MÁFIA IMPORTS",
-    text: "Importados premium, street luxury, perfumes, jerseys e acessórios exclusivos.",
+    title: "DA M\u00c1FIA IMPORTS",
+    text: "Importados premium, street luxury, perfumes, jerseys e acess\u00f3rios exclusivos.",
   },
   { icon: Gem, label: "Produtos", title: "Selecionados" },
   { icon: ShieldCheck, label: "Qualidade", title: "Premium" },
@@ -58,18 +71,21 @@ const trustItems = [
 function ContatoPage() {
   return (
     <main className="contact-page">
-      <div className="contact-page-glow" />
+      <div className="contact-page-glow" aria-hidden="true" />
 
-      <section className="contact-layout">
+      <section className="contact-layout" aria-label="Fale com a DA MAFIA IMPORTS">
         <div className="contact-copy">
           <div className="contact-eyebrow">Fale com a gente</div>
+
           <div className="contact-hero-logo" aria-hidden="true">
             <img src="/assets/da-mafia/logo-da-mafia-from-hero.png?v=logo-oficial-20260604" alt="" />
           </div>
+
           <h1>
             Entre em <span>Contato</span>
           </h1>
-          <p>Atendimento exclusivo e personalizado para te oferecer a melhor experiência.</p>
+
+          <p>{"Atendimento exclusivo e personalizado para te oferecer a melhor experi\u00eancia."}</p>
 
           <div className="contact-card-list">
             {contacts.map(({ icon: Icon, label, value, detail, href }) => (
@@ -93,10 +109,11 @@ function ContatoPage() {
           </div>
         </div>
 
-        <form className="contact-form" onSubmit={(event) => event.preventDefault()}>
+        <form className="contact-form" aria-label="Formulario de contato" onSubmit={(event) => event.preventDefault()}>
           <div className="contact-form-mark" aria-hidden="true">
             <Crown />
           </div>
+
           <div className="contact-form-heading">
             <div>
               <h2>Envie sua mensagem</h2>
@@ -108,12 +125,15 @@ function ContatoPage() {
           <FormField label="Nome">
             <Input placeholder="Seu nome completo" required />
           </FormField>
+
           <FormField label="E-mail">
             <Input type="email" placeholder="Seu melhor e-mail" required />
           </FormField>
+
           <FormField label="Telefone">
             <Input placeholder="Seu telefone (opcional)" />
           </FormField>
+
           <FormField label="Mensagem">
             <Textarea rows={7} placeholder="Como podemos te ajudar?" required />
           </FormField>
@@ -124,7 +144,7 @@ function ContatoPage() {
 
           <p className="contact-secure">
             <LockKeyhole className="h-4 w-4" />
-            Seus dados estão protegidos e não serão compartilhados.
+            {"Seus dados est\u00e3o protegidos e n\u00e3o ser\u00e3o compartilhados."}
           </p>
         </form>
       </section>
@@ -138,7 +158,7 @@ function ContatoPage() {
   );
 }
 
-function FormField({ label, children }: { label: string; children: React.ReactNode }) {
+function FormField({ label, children }: { label: string; children: ReactNode }) {
   return (
     <div className="contact-field">
       <Label>{label}</Label>
@@ -147,7 +167,7 @@ function FormField({ label, children }: { label: string; children: React.ReactNo
   );
 }
 
-function TrustItem({ icon, label, title, text }: { icon: React.ReactNode; label: string; title: string; text?: string }) {
+function TrustItem({ icon, label, title, text }: { icon: ReactNode; label: string; title: string; text?: string }) {
   return (
     <div>
       <span>{icon}</span>
