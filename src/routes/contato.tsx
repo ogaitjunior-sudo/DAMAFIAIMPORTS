@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Headphones, Instagram, LockKeyhole, Mail, MapPin, MessageCircle, Send, Settings, ShieldCheck } from "lucide-react";
+import { Crown, Gem, Headphones, Instagram, LockKeyhole, Mail, MapPin, MessageCircle, Send, ShieldCheck, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -15,16 +15,16 @@ const contacts = [
   {
     icon: MessageCircle,
     label: "WhatsApp",
-    value: "22 99770-1093",
+    value: "(22) 99770-1093",
     detail: "Atendimento rápido e direto",
     href: "https://wa.me/5522997701093",
   },
   {
     icon: Mail,
     label: "E-mail",
-    value: "contato@damafiaimports.com",
-    detail: "Responderemos o mais breve possível",
-    href: "mailto:contato@damafiaimports.com",
+    value: "damafiaimports@gmail.com",
+    detail: "Responderemos em breve",
+    href: "mailto:damafiaimports@gmail.com",
   },
   {
     icon: Instagram,
@@ -36,10 +36,23 @@ const contacts = [
   {
     icon: MapPin,
     label: "Localização",
-    value: "Salvador, BA",
+    value: "Cabo Frio, RJ",
     detail: "Atendemos todo o Brasil",
     href: "#",
   },
+];
+
+const trustItems = [
+  {
+    icon: Crown,
+    label: "Perfil oficial",
+    title: "DA MÁFIA IMPORTS",
+    text: "Importados premium, street luxury, perfumes, jerseys e acessórios exclusivos.",
+  },
+  { icon: Gem, label: "Produtos", title: "Selecionados" },
+  { icon: ShieldCheck, label: "Qualidade", title: "Premium" },
+  { icon: Truck, label: "Envio seguro", title: "Para todo o Brasil" },
+  { icon: Headphones, label: "Atendimento", title: "Exclusivo" },
 ];
 
 function ContatoPage() {
@@ -50,13 +63,13 @@ function ContatoPage() {
       <section className="contact-layout">
         <div className="contact-copy">
           <div className="contact-eyebrow">Fale com a gente</div>
+          <div className="contact-hero-logo" aria-hidden="true">
+            <img src="/assets/da-mafia/logo-da-mafia-from-hero.png?v=logo-oficial-20260604" alt="" />
+          </div>
           <h1>
             Entre em <span>Contato</span>
           </h1>
-          <p>
-            Estamos prontos para te atender! Tire dúvidas, faça sugestões ou fale sobre parcerias.
-            <strong> Será um prazer conversar com você.</strong>
-          </p>
+          <p>Atendimento exclusivo e personalizado para te oferecer a melhor experiência.</p>
 
           <div className="contact-card-list">
             {contacts.map(({ icon: Icon, label, value, detail, href }) => (
@@ -78,44 +91,16 @@ function ContatoPage() {
               </a>
             ))}
           </div>
-
-          <a href={siteInfo.instagram.url} target="_blank" rel="noreferrer" className="contact-profile-card">
-            <small>Perfil oficial</small>
-            <h2>{siteInfo.instagram.name}</h2>
-            <p>{siteInfo.instagram.bio}</p>
-            <div>
-              <span>
-                <strong>{siteInfo.instagram.posts}</strong>
-                Posts
-              </span>
-              <span>
-                <strong>{siteInfo.instagram.followers}</strong>
-                Seguidores
-              </span>
-              <span>
-                <strong>{siteInfo.instagram.following}</strong>
-                Seguindo
-              </span>
-            </div>
-          </a>
-
-          <a href="https://wa.me/5522997701093" target="_blank" rel="noreferrer" className="contact-whatsapp-cta">
-            <MessageCircle />
-            <span>
-              <strong>Atendimento direto no WhatsApp</strong>
-              Clique para conversar agora
-            </span>
-            <b>→</b>
-          </a>
         </div>
 
-        <form className="contact-form">
+        <form className="contact-form" onSubmit={(event) => event.preventDefault()}>
+          <div className="contact-form-mark" aria-hidden="true">
+            <Crown />
+          </div>
           <div className="contact-form-heading">
-            <span>
-              <MessageCircle />
-            </span>
             <div>
               <h2>Envie sua mensagem</h2>
+              <span aria-hidden="true">★ ★ ★</span>
               <p>Preencha os dados abaixo que entraremos em contato.</p>
             </div>
           </div>
@@ -144,10 +129,10 @@ function ContatoPage() {
         </form>
       </section>
 
-      <section className="contact-trust-strip">
-        <TrustItem icon={<ShieldCheck />} title="Ambiente Seguro" text="Seus dados protegidos com criptografia avançada." />
-        <TrustItem icon={<Settings />} title="Rifas Auditadas" text="Processo claro, suporte direto e acompanhamento transparente." />
-        <TrustItem icon={<Headphones />} title="Atendimento Humanizado" text="Estamos sempre prontos para te atender da melhor forma." />
+      <section className="contact-trust-strip" aria-label="Garantias DA MAFIA IMPORTS">
+        {trustItems.map(({ icon: Icon, label, title, text }) => (
+          <TrustItem key={label} icon={<Icon />} label={label} title={title} text={text} />
+        ))}
       </section>
     </main>
   );
@@ -162,15 +147,15 @@ function FormField({ label, children }: { label: string; children: React.ReactNo
   );
 }
 
-function TrustItem({ icon, title, text }: { icon: React.ReactNode; title: string; text: string }) {
+function TrustItem({ icon, label, title, text }: { icon: React.ReactNode; label: string; title: string; text?: string }) {
   return (
     <div>
       <span>{icon}</span>
       <div>
+        <small>{label}</small>
         <h2>{title}</h2>
-        <p>{text}</p>
+        {text ? <p>{text}</p> : null}
       </div>
     </div>
   );
 }
-
