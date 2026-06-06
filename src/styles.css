@@ -14080,26 +14080,33 @@ body:has(.contact-exact-page) .site-header {
     position: relative;
     width: 100%;
     max-width: 1024px;
+    height: max(100svh, calc(100vw * 1672 / 941));
     margin: 0 auto;
-    aspect-ratio: 2 / 3;
+    overflow: hidden;
     background: #000;
     line-height: normal;
   }
 
   .contact-mobile-exact-art {
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 50%;
     display: block;
-    width: 100%;
+    width: max(100%, calc(100svh * 941 / 1672));
     height: 100%;
     object-fit: fill;
+    transform: translateX(-50%);
     user-select: none;
     -webkit-user-drag: none;
   }
 
   .contact-mobile-exact-form {
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 50%;
+    width: max(100%, calc(100svh * 941 / 1672));
+    height: 100%;
+    transform: translateX(-50%);
     z-index: 2;
   }
 
@@ -14121,17 +14128,19 @@ body:has(.contact-exact-page) .site-header {
   }
 
   .contact-mobile-exact-home {
-    top: 0.9%;
-    left: 2.8%;
-    width: 35.5%;
-    height: 7.8%;
+    top: 0;
+    left: 50%;
+    width: max(100%, calc(100svh * 941 / 1672));
+    height: 5.4%;
+    transform: translateX(-50%);
   }
 
   .contact-mobile-exact-menu-wrap {
-    top: 3.1%;
-    right: 2.9%;
-    width: 9.5%;
-    height: 5.7%;
+    display: none;
+    top: 2.1%;
+    right: 3%;
+    width: 9%;
+    height: 4.3%;
     padding: 0;
   }
 
@@ -14175,9 +14184,7 @@ body:has(.contact-exact-page) .site-header {
 
   .contact-mobile-exact-field {
     position: absolute;
-    left: 10.85%;
-    width: 78.35%;
-    height: 3.18%;
+    height: 3.28%;
     box-sizing: border-box;
     border: 0;
     outline: 0;
@@ -14185,7 +14192,7 @@ body:has(.contact-exact-page) .site-header {
     color: rgba(255, 248, 233, 0.92);
     caret-color: #e1a22f;
     font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    font-size: clamp(0.7rem, 3vw, 0.95rem);
+    font-size: clamp(0.52rem, 2.25vw, 0.92rem);
     font-weight: 500;
     line-height: 1.25;
   }
@@ -14201,54 +14208,69 @@ body:has(.contact-exact-page) .site-header {
   .contact-mobile-exact-field--name,
   .contact-mobile-exact-field--email,
   .contact-mobile-exact-field--phone {
-    padding: 0 2.2% 0 6.15%;
+    padding: 0 1.5%;
   }
 
   .contact-mobile-exact-field--name {
-    top: 52.18%;
+    top: 49.48%;
+    left: 14%;
+    width: 34.2%;
   }
 
   .contact-mobile-exact-field--email {
-    top: 55.9%;
+    top: 49.48%;
+    left: 51.1%;
+    width: 34.95%;
   }
 
   .contact-mobile-exact-field--phone {
-    top: 59.62%;
+    top: 55.45%;
+    left: 14%;
+    width: 34.2%;
   }
 
   .contact-mobile-exact-field--message {
-    top: 63.32%;
-    height: 5.45%;
-    padding: 1.18% 2.2% 0 6.15%;
+    top: 55.45%;
+    left: 51.1%;
+    width: 34.95%;
+    height: 6.08%;
+    padding: 1.08% 1.5% 0;
     resize: none;
   }
 
   .contact-mobile-exact-submit {
-    top: 69.62%;
-    left: 10.85%;
-    width: 78.35%;
-    height: 3.58%;
+    top: 62.8%;
+    left: 14%;
+    width: 72.05%;
+    height: 3.5%;
   }
 
   .contact-mobile-exact-link--whatsapp {
-    top: 77.52%;
-    left: 8.4%;
-    width: 40.95%;
-    height: 6.85%;
+    top: 70.88%;
+    left: 9.05%;
+    width: 39.25%;
+    height: 5.75%;
   }
 
   .contact-mobile-exact-link--email {
-    top: 77.52%;
-    left: 50.45%;
-    width: 41.25%;
-    height: 6.85%;
+    top: 70.88%;
+    left: 49.6%;
+    width: 40.45%;
+    height: 5.75%;
   }
 
   .contact-mobile-exact-link--instagram {
-    top: 85.15%;
-    left: 8.4%;
-    width: 40.95%;
-    height: 6.85%;
+    top: 77.34%;
+    left: 9.05%;
+    width: 39.25%;
+    height: 5.75%;
+  }
+
+  .contact-mobile-exact-link--location {
+    top: 77.34%;
+    left: 49.6%;
+    width: 40.45%;
+    height: 5.75%;
   }
 
   .contact-mobile-exact-home:focus-visible,

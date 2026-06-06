@@ -105,7 +105,7 @@ function ContatoPage() {
         <div className="contact-mobile-exact-stage">
           <img
             className="contact-mobile-exact-art"
-            src="/assets/da-mafia/contact-mobile-exact-reference-20260605.png?v=contact-mobile-exact-20260605"
+            src="/assets/da-mafia/contact-mobile-exact-reference-20260605.png?v=contact-mobile-exact-20260606-full"
             alt="DA MAFIA IMPORTS - Entre em contato"
             draggable={false}
           />
@@ -179,6 +179,7 @@ function ContatoPage() {
           <a className="contact-mobile-exact-link contact-mobile-exact-link--whatsapp" href="https://wa.me/5521997701093" aria-label="Abrir WhatsApp" />
           <a className="contact-mobile-exact-link contact-mobile-exact-link--email" href="mailto:damafiaimports@gmail.com" aria-label="Enviar e-mail" />
           <a className="contact-mobile-exact-link contact-mobile-exact-link--instagram" href="https://www.instagram.com/damafiaimports" aria-label="Abrir Instagram" />
+          <a className="contact-mobile-exact-link contact-mobile-exact-link--location" href="https://www.google.com/maps/search/?api=1&query=Cabo%20Frio%2C%20RJ" aria-label="Ver localizacao" />
         </div>
       </section>
     </main>
