@@ -13515,9 +13515,9 @@ body:has(.contact-exact-page) .site-header {
 .contact-exact-submit {
   position: absolute;
   left: 50.72%;
-  top: 74.41%;
+  top: 74.58%;
   width: 28.65%;
-  height: 5.86%;
+  height: 5.45%;
   appearance: none;
   border: 0;
   border-radius: clamp(4px, 0.42vw, 8px);
@@ -13546,23 +13546,717 @@ body:has(.contact-exact-page) .site-header {
 
 @media (min-width: 1024px) and (min-aspect-ratio: 3 / 2) {
   :root {
-    --contact-exact-shift-up: 30px;
+    --contact-exact-shift-up: 8px;
   }
 
   .contact-exact-page {
-    min-height: calc(100svh - 5rem);
+    min-height: calc(100svh - 6.35rem);
     overflow: hidden;
   }
 
   .contact-exact-stage {
     width: 100vw;
-    height: calc(100svh - 5rem + var(--contact-exact-shift-up));
+    height: calc(100svh - 6.35rem + var(--contact-exact-shift-up));
     aspect-ratio: auto;
     transform: translateY(calc(-1 * var(--contact-exact-shift-up)));
   }
 
   .contact-exact-art {
     object-fit: fill;
+  }
+}
+
+.contact-mobile-shell {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  html:has(.contact-exact-page),
+  body:has(.contact-exact-page) {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    background: #000;
+  }
+
+  body:has(.contact-exact-page) .site-header {
+    width: 100vw;
+    max-width: 100vw;
+    overflow: hidden;
+    background: #030303 !important;
+    border-bottom: 1px solid rgba(225, 151, 24, 0.82) !important;
+    box-shadow: none !important;
+  }
+
+  body:has(.contact-exact-page) .site-header > .container {
+    position: relative;
+    width: 100%;
+    height: 5.75rem;
+    max-width: 100vw;
+    padding-left: 1rem;
+    padding-right: 4.6rem;
+  }
+
+  body:has(.contact-exact-page) .site-header .group {
+    min-width: 0;
+    gap: 0.65rem;
+  }
+
+  body:has(.contact-exact-page) .site-header .da-mafia-logo-mark {
+    width: 4.1rem;
+    height: 3.9rem;
+  }
+
+  body:has(.contact-exact-page) .site-header .group > div:last-child span:first-child {
+    font-size: 1.42rem;
+    letter-spacing: 0;
+  }
+
+  body:has(.contact-exact-page) .site-header .group > div:last-child span:last-child {
+    color: #f7efe1;
+    font-size: 0.76rem;
+    letter-spacing: 0;
+  }
+
+  body:has(.contact-exact-page) .original-template-menu-button {
+    position: absolute;
+    top: 50%;
+    right: 1.05rem;
+    display: flex !important;
+    width: 3.2rem;
+    height: 3.2rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0 !important;
+    color: #daa044;
+    transform: translateY(-50%);
+  }
+
+  body:has(.contact-exact-page) .original-template-menu-button svg {
+    width: 2.35rem;
+    height: 2.35rem;
+    max-width: none;
+    stroke-width: 2.4;
+  }
+
+  .contact-exact-page {
+    display: block;
+    width: 100%;
+    min-height: auto;
+    overflow-x: hidden;
+    color: #fff7e7;
+    background: #000;
+  }
+
+  .contact-exact-stage {
+    display: none;
+  }
+
+  .contact-mobile-shell {
+    --contact-mobile-gutter: clamp(1.55rem, 7.2vw, 2.25rem);
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 var(--contact-mobile-gutter) 1.55rem;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 74% 4%, rgba(224, 155, 35, 0.1), transparent 13rem),
+      linear-gradient(180deg, #000 0%, #040302 48%, #000 100%);
+  }
+
+  .contact-mobile-hero {
+    position: relative;
+    min-height: clamp(37.2rem, 142vw, 45rem);
+    margin: 0 calc(-1 * var(--contact-mobile-gutter));
+    overflow: hidden;
+    background:
+      linear-gradient(90deg, rgba(0, 0, 0, 0.98) 0%, rgba(0, 0, 0, 0.58) 48%, rgba(0, 0, 0, 0.12) 100%),
+      radial-gradient(circle at 76% 37%, rgba(230, 160, 37, 0.16), transparent 12rem),
+      #000;
+  }
+
+  .contact-mobile-hero::after {
+    position: absolute;
+    inset: auto 0 0;
+    height: 9rem;
+    background: linear-gradient(180deg, transparent, #000 88%);
+    content: "";
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .contact-mobile-scene {
+    position: absolute;
+    background-image: url("/assets/da-mafia/contact-exact-reference-20260605.png?v=contact-mobile-scene-20260606");
+    background-repeat: no-repeat;
+    pointer-events: none;
+  }
+
+  .contact-mobile-scene--man {
+    top: 1.55rem;
+    right: -1.85rem;
+    width: min(67vw, 20.4rem);
+    height: 34.5rem;
+    opacity: 0.92;
+    background-size: 442% auto;
+    background-position: left 0 top 3%;
+    filter: saturate(1) contrast(1.1) brightness(0.82);
+    z-index: 1;
+  }
+
+  .contact-mobile-scene--car {
+    top: 8.4rem;
+    right: -7.2rem;
+    width: min(86vw, 25rem);
+    height: 30rem;
+    opacity: 0.96;
+    background-size: 292% auto;
+    background-position: right 0 top 8%;
+    filter: saturate(1.08) contrast(1.13) brightness(0.88);
+    z-index: 0;
+  }
+
+  .contact-mobile-hero-copy {
+    position: relative;
+    z-index: 3;
+    width: min(64vw, 22rem);
+    padding: 1.35rem 0 0 0.6rem;
+    text-align: center;
+  }
+
+  .contact-mobile-kicker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.58rem;
+    margin: 0 0 0.65rem;
+    color: #e6ad38;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(0.72rem, 2.7vw, 1rem);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .contact-mobile-kicker::before,
+  .contact-mobile-kicker::after {
+    width: 0.5rem;
+    height: 0.5rem;
+    border: 1px solid rgba(230, 173, 56, 0.95);
+    content: "";
+    transform: rotate(45deg);
+  }
+
+  .contact-mobile-kicker::after {
+    width: clamp(1.1rem, 8vw, 2.35rem);
+    height: 1px;
+    border: 0;
+    background: linear-gradient(90deg, rgba(230, 173, 56, 0.95), transparent);
+    transform: none;
+  }
+
+  .contact-mobile-crest {
+    display: block;
+    width: min(42vw, 13.8rem);
+    margin: 0.2rem auto 0.15rem;
+    filter: drop-shadow(0 0 22px rgba(226, 157, 36, 0.34));
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  .contact-mobile-hero-copy h1 {
+    margin: -0.2rem auto 0;
+    color: #f6f0e9;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.12rem, 10.3vw, 3.85rem);
+    font-weight: 900;
+    letter-spacing: 0;
+    line-height: 0.92;
+    text-transform: uppercase;
+    text-shadow: 0 5px 16px rgba(0, 0, 0, 0.72);
+  }
+
+  .contact-mobile-hero-copy h1 span,
+  .contact-mobile-hero-copy h1 strong {
+    display: block;
+  }
+
+  .contact-mobile-hero-copy h1 strong {
+    color: transparent;
+    background: linear-gradient(180deg, #ffe9a2 0%, #d6921a 58%, #7e4c05 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  .contact-mobile-subtitle {
+    width: min(100%, 19rem);
+    margin: 0.75rem auto 0;
+    color: rgba(255, 248, 233, 0.94);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(0.73rem, 2.8vw, 0.95rem);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    line-height: 1.35;
+    text-transform: uppercase;
+    text-wrap: balance;
+  }
+
+  .contact-mobile-form-card {
+    position: relative;
+    z-index: 4;
+    width: min(100%, 34.4rem);
+    margin: -0.5rem auto 0;
+    padding: 1.1rem 0.85rem 1.1rem;
+    border: 1px solid rgba(224, 151, 23, 0.86);
+    border-radius: 0.5rem;
+    background:
+      linear-gradient(180deg, rgba(10, 9, 7, 0.94), rgba(0, 0, 0, 0.96)),
+      radial-gradient(circle at 50% 0%, rgba(224, 151, 23, 0.14), transparent 13rem);
+    box-shadow: 0 20px 38px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 224, 126, 0.08);
+  }
+
+  .contact-mobile-form-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.72rem;
+    color: #e5a333;
+  }
+
+  .contact-mobile-form-title svg {
+    width: 1.35rem;
+    height: 1.35rem;
+  }
+
+  .contact-mobile-form-title h2 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.28rem, 5.2vw, 1.75rem);
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .contact-mobile-form-card > p {
+    margin: 0.9rem 0 0.95rem;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 0.86rem;
+    line-height: 1.35;
+    text-align: center;
+  }
+
+  .contact-mobile-field {
+    display: grid;
+    grid-template-columns: 2.15rem minmax(0, 1fr);
+    align-items: center;
+    min-height: 3.05rem;
+    margin-top: 0.55rem;
+    border: 1px solid rgba(219, 146, 20, 0.58);
+    border-radius: 0.34rem;
+    background: rgba(0, 0, 0, 0.66);
+  }
+
+  .contact-mobile-field > svg {
+    width: 1.05rem;
+    height: 1.05rem;
+    margin-left: 0.78rem;
+    color: #d99b2c;
+  }
+
+  .contact-mobile-field input,
+  .contact-mobile-field textarea {
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: rgba(255, 249, 236, 0.92);
+    font: inherit;
+    font-size: 0.95rem;
+    line-height: 1.3;
+  }
+
+  .contact-mobile-field input::placeholder,
+  .contact-mobile-field textarea::placeholder {
+    color: rgba(255, 255, 255, 0.66);
+  }
+
+  .contact-mobile-field:focus-within {
+    border-color: rgba(255, 210, 96, 0.92);
+    box-shadow: 0 0 0 2px rgba(217, 155, 44, 0.18);
+  }
+
+  .contact-mobile-field--textarea {
+    min-height: 5.6rem;
+    align-items: start;
+    padding-top: 0.92rem;
+  }
+
+  .contact-mobile-field--textarea textarea {
+    height: 4.2rem;
+    padding-right: 0.4rem;
+    resize: none;
+  }
+
+  .contact-mobile-submit {
+    display: flex;
+    width: 100%;
+    min-height: 3.25rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.95rem;
+    margin-top: 0.72rem;
+    border: 0;
+    border-radius: 0.34rem;
+    background: linear-gradient(90deg, #f0b22e 0%, #ffcf62 45%, #c98212 100%);
+    color: #090602;
+    cursor: pointer;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.04rem;
+    font-weight: 950;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    text-transform: uppercase;
+    box-shadow: inset 0 1px 0 rgba(255, 245, 180, 0.6);
+    touch-action: manipulation;
+  }
+
+  .contact-mobile-submit svg {
+    width: 2.55rem;
+    height: 1.25rem;
+    fill: currentColor;
+    stroke: currentColor;
+    stroke-width: 2;
+  }
+
+  .contact-mobile-submit:active {
+    transform: scale(0.99);
+  }
+
+  .contact-mobile-safe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.48rem;
+    margin-top: 0.85rem;
+    color: #e1a22f;
+    font-size: 0.84rem;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  .contact-mobile-safe svg {
+    width: 1rem;
+    height: 1rem;
+    flex: 0 0 auto;
+  }
+
+  .contact-mobile-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+    width: min(100%, 34.4rem);
+    margin: 0.9rem auto 0;
+  }
+
+  .contact-mobile-info-card {
+    display: grid;
+    min-height: 5.1rem;
+    grid-template-columns: 2.58rem minmax(0, 1fr);
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.68rem 0.5rem;
+    border: 1px solid rgba(224, 151, 23, 0.72);
+    border-radius: 0.5rem;
+    color: #fff6e8;
+    background: linear-gradient(180deg, rgba(9, 8, 6, 0.92), rgba(0, 0, 0, 0.94));
+    text-decoration: none;
+  }
+
+  .contact-mobile-info-card > svg {
+    width: 2rem;
+    height: 2rem;
+    justify-self: center;
+    color: #d99b2c;
+    stroke-width: 1.7;
+  }
+
+  .contact-mobile-info-card span {
+    min-width: 0;
+  }
+
+  .contact-mobile-info-card strong {
+    display: block;
+    color: #dfa22f;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.82rem;
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .contact-mobile-info-card b,
+  .contact-mobile-info-card small {
+    display: block;
+    margin-top: 0.28rem;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-mobile-info-card b {
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 800;
+    line-height: 1.15;
+  }
+
+  .contact-mobile-info-card small {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.72rem;
+    line-height: 1.2;
+  }
+
+  .contact-mobile-benefits {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.25rem;
+    width: min(100%, 34.4rem);
+    margin: 0.9rem auto 0;
+    padding: 0.8rem 0.45rem;
+    border: 1px solid rgba(224, 151, 23, 0.66);
+    border-radius: 0.5rem;
+    background: linear-gradient(180deg, rgba(9, 8, 6, 0.92), rgba(0, 0, 0, 0.94));
+  }
+
+  .contact-mobile-benefits span {
+    display: grid;
+    min-width: 0;
+    justify-items: center;
+    gap: 0.22rem;
+    text-align: center;
+  }
+
+  .contact-mobile-benefits svg {
+    width: 1.85rem;
+    height: 1.85rem;
+    color: #d99b2c;
+    stroke-width: 1.7;
+  }
+
+  .contact-mobile-benefits strong {
+    color: #dfa22f;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.72rem;
+    font-weight: 900;
+    line-height: 1.05;
+    text-transform: uppercase;
+  }
+
+  .contact-mobile-benefits small {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.68rem;
+    line-height: 1.15;
+  }
+}
+
+@media (max-width: 767px) {
+  body:has(.contact-exact-page) .site-header {
+    display: none !important;
+  }
+
+  .contact-mobile-shell {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    overflow: hidden;
+    background: #000;
+    line-height: 0;
+  }
+
+  .contact-mobile-exact-stage {
+    position: relative;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    aspect-ratio: 2 / 3;
+    background: #000;
+    line-height: normal;
+  }
+
+  .contact-mobile-exact-art {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  .contact-mobile-exact-form {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+  }
+
+  .contact-mobile-exact-home,
+  .contact-mobile-exact-menu-wrap,
+  .contact-mobile-exact-link,
+  .contact-mobile-exact-submit {
+    position: absolute;
+    z-index: 3;
+    display: block;
+    appearance: none;
+    border: 0;
+    border-radius: 0.25rem;
+    background: transparent;
+    color: transparent;
+    cursor: pointer;
+    text-decoration: none;
+    touch-action: manipulation;
+  }
+
+  .contact-mobile-exact-home {
+    top: 0.9%;
+    left: 2.8%;
+    width: 35.5%;
+    height: 7.8%;
+  }
+
+  .contact-mobile-exact-menu-wrap {
+    top: 3.1%;
+    right: 2.9%;
+    width: 9.5%;
+    height: 5.7%;
+    padding: 0;
+  }
+
+  .contact-mobile-exact-menu {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .contact-mobile-exact-menu::-webkit-details-marker {
+    display: none;
+  }
+
+  .contact-mobile-exact-menu-panel {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: grid;
+    width: 8.8rem;
+    margin-top: 0.35rem;
+    padding: 0.35rem;
+    border: 1px solid rgba(224, 151, 23, 0.82);
+    border-radius: 0.38rem;
+    background: rgba(0, 0, 0, 0.96);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.55);
+  }
+
+  .contact-mobile-exact-menu-panel a {
+    padding: 0.55rem 0.65rem;
+    color: #e1a22f;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    line-height: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .contact-mobile-exact-field {
+    position: absolute;
+    left: 10.85%;
+    width: 78.35%;
+    height: 3.18%;
+    box-sizing: border-box;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: rgba(255, 248, 233, 0.92);
+    caret-color: #e1a22f;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: clamp(0.7rem, 3vw, 0.95rem);
+    font-weight: 500;
+    line-height: 1.25;
+  }
+
+  .contact-mobile-exact-field::placeholder {
+    color: transparent;
+  }
+
+  .contact-mobile-exact-field:focus-visible {
+    box-shadow: inset 0 0 0 2px rgba(255, 205, 87, 0.24);
+  }
+
+  .contact-mobile-exact-field--name,
+  .contact-mobile-exact-field--email,
+  .contact-mobile-exact-field--phone {
+    padding: 0 2.2% 0 6.15%;
+  }
+
+  .contact-mobile-exact-field--name {
+    top: 52.18%;
+  }
+
+  .contact-mobile-exact-field--email {
+    top: 55.9%;
+  }
+
+  .contact-mobile-exact-field--phone {
+    top: 59.62%;
+  }
+
+  .contact-mobile-exact-field--message {
+    top: 63.32%;
+    height: 5.45%;
+    padding: 1.18% 2.2% 0 6.15%;
+    resize: none;
+  }
+
+  .contact-mobile-exact-submit {
+    top: 69.62%;
+    left: 10.85%;
+    width: 78.35%;
+    height: 3.58%;
+  }
+
+  .contact-mobile-exact-link--whatsapp {
+    top: 77.52%;
+    left: 8.4%;
+    width: 40.95%;
+    height: 6.85%;
+  }
+
+  .contact-mobile-exact-link--email {
+    top: 77.52%;
+    left: 50.45%;
+    width: 41.25%;
+    height: 6.85%;
+  }
+
+  .contact-mobile-exact-link--instagram {
+    top: 85.15%;
+    left: 8.4%;
+    width: 40.95%;
+    height: 6.85%;
+  }
+
+  .contact-mobile-exact-home:focus-visible,
+  .contact-mobile-exact-menu:focus-visible,
+  .contact-mobile-exact-link:focus-visible,
+  .contact-mobile-exact-submit:focus-visible {
+    outline: 2px solid rgba(255, 221, 102, 0.9);
+    outline-offset: 2px;
   }
 }
 

@@ -100,6 +100,87 @@ function ContatoPage() {
           </button>
         </form>
       </section>
+
+      <section className="contact-mobile-shell" aria-label="Contato DA MAFIA IMPORTS mobile">
+        <div className="contact-mobile-exact-stage">
+          <img
+            className="contact-mobile-exact-art"
+            src="/assets/da-mafia/contact-mobile-exact-reference-20260605.png?v=contact-mobile-exact-20260605"
+            alt="DA MAFIA IMPORTS - Entre em contato"
+            draggable={false}
+          />
+
+          <a className="contact-mobile-exact-home" href="/" aria-label="Ir para o inicio" />
+          <details className="contact-mobile-exact-menu-wrap">
+            <summary className="contact-mobile-exact-menu" aria-label="Menu">
+              <span className="sr-only">Menu</span>
+            </summary>
+            <nav className="contact-mobile-exact-menu-panel" aria-label="Menu mobile">
+              <a href="/">Inicio</a>
+              <a href="/rifas">Rifas</a>
+              <a href="/loja">Colecao</a>
+              <a href="/contato">Contato</a>
+            </nav>
+          </details>
+
+          <form className="contact-mobile-exact-form" aria-label="Formulario de contato mobile" onSubmit={handleContactSubmit}>
+            <label className="sr-only" htmlFor="mobile-contact-name">
+              Nome
+            </label>
+            <input
+              id="mobile-contact-name"
+              name="nome"
+              className="contact-mobile-exact-field contact-mobile-exact-field--name"
+              placeholder="Seu nome completo"
+              autoComplete="name"
+              required
+            />
+
+            <label className="sr-only" htmlFor="mobile-contact-email">
+              E-mail
+            </label>
+            <input
+              id="mobile-contact-email"
+              name="email"
+              className="contact-mobile-exact-field contact-mobile-exact-field--email"
+              placeholder="Seu melhor e-mail"
+              type="email"
+              autoComplete="email"
+              required
+            />
+
+            <label className="sr-only" htmlFor="mobile-contact-phone">
+              Telefone
+            </label>
+            <input
+              id="mobile-contact-phone"
+              name="telefone"
+              className="contact-mobile-exact-field contact-mobile-exact-field--phone"
+              placeholder="Seu telefone (opcional)"
+              autoComplete="tel"
+            />
+
+            <label className="sr-only" htmlFor="mobile-contact-message">
+              Mensagem
+            </label>
+            <textarea
+              id="mobile-contact-message"
+              name="mensagem"
+              className="contact-mobile-exact-field contact-mobile-exact-field--message"
+              placeholder="Como podemos te ajudar?"
+              required
+            />
+
+            <button className="contact-mobile-exact-submit" type="submit" aria-label="Enviar mensagem" title="Enviar mensagem">
+              <span className="sr-only">Enviar mensagem</span>
+            </button>
+          </form>
+
+          <a className="contact-mobile-exact-link contact-mobile-exact-link--whatsapp" href="https://wa.me/5521997701093" aria-label="Abrir WhatsApp" />
+          <a className="contact-mobile-exact-link contact-mobile-exact-link--email" href="mailto:damafiaimports@gmail.com" aria-label="Enviar e-mail" />
+          <a className="contact-mobile-exact-link contact-mobile-exact-link--instagram" href="https://www.instagram.com/damafiaimports" aria-label="Abrir Instagram" />
+        </div>
+      </section>
     </main>
   );
 }
