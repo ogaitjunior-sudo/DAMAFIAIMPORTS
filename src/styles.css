@@ -13570,7 +13570,7 @@ body:has(.contact-exact-page) .site-header {
   display: none;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767px), ((pointer: coarse) and (max-width: 1100px)) {
   html:has(.contact-exact-page),
   body:has(.contact-exact-page) {
     width: 100%;
@@ -14061,7 +14061,7 @@ body:has(.contact-exact-page) .site-header {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767px), ((pointer: coarse) and (max-width: 1100px)) {
   body:has(.contact-exact-page) .site-header {
     display: none !important;
   }
@@ -14074,6 +14074,19 @@ body:has(.contact-exact-page) .site-header {
     overflow: hidden;
     background: #000;
     line-height: 0;
+  }
+
+  .contact-exact-page {
+    display: block;
+    width: 100%;
+    min-height: auto;
+    overflow-x: hidden;
+    color: #fff7e7;
+    background: #000;
+  }
+
+  .contact-exact-stage {
+    display: none;
   }
 
   .contact-mobile-exact-stage {
