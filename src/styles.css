@@ -14077,10 +14077,11 @@ body:has(.contact-exact-page) .site-header {
   }
 
   .contact-mobile-exact-stage {
+    --contact-mobile-art-width: max(100%, calc(100vh * 941 / 1672), calc(100dvh * 941 / 1672));
     position: relative;
     width: 100%;
     max-width: 1024px;
-    height: max(100svh, calc(100vw * 1672 / 941));
+    height: max(100vh, 100dvh, calc(100vw * 1672 / 941));
     margin: 0 auto;
     overflow: hidden;
     background: #000;
@@ -14092,7 +14093,7 @@ body:has(.contact-exact-page) .site-header {
     top: 0;
     left: 50%;
     display: block;
-    width: max(100%, calc(100svh * 941 / 1672));
+    width: var(--contact-mobile-art-width);
     height: 100%;
     object-fit: fill;
     transform: translateX(-50%);
@@ -14104,7 +14105,7 @@ body:has(.contact-exact-page) .site-header {
     position: absolute;
     top: 0;
     left: 50%;
-    width: max(100%, calc(100svh * 941 / 1672));
+    width: var(--contact-mobile-art-width);
     height: 100%;
     transform: translateX(-50%);
     z-index: 2;
@@ -14130,7 +14131,7 @@ body:has(.contact-exact-page) .site-header {
   .contact-mobile-exact-home {
     top: 0;
     left: 50%;
-    width: max(100%, calc(100svh * 941 / 1672));
+    width: var(--contact-mobile-art-width);
     height: 5.4%;
     transform: translateX(-50%);
   }
