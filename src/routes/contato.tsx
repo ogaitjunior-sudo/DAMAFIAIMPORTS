@@ -90,7 +90,12 @@ function ContatoPage() {
             required
           />
 
-          <button className="contact-exact-submit" type="submit" aria-label="Enviar mensagem">
+          <button
+            className="contact-exact-submit"
+            type="submit"
+            aria-label="Enviar mensagem"
+            title="Enviar mensagem"
+          >
             <span className="sr-only">Enviar mensagem</span>
           </button>
         </form>

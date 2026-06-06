@@ -13518,15 +13518,30 @@ body:has(.contact-exact-page) .site-header {
   top: 74.41%;
   width: 28.65%;
   height: 5.86%;
+  appearance: none;
   border: 0;
+  border-radius: clamp(4px, 0.42vw, 8px);
   padding: 0;
   background: transparent;
   cursor: pointer;
+  transition: box-shadow 140ms ease, transform 140ms ease, background 140ms ease;
+  touch-action: manipulation;
+}
+
+.contact-exact-submit:hover {
+  background: rgba(255, 202, 75, 0.08);
+  box-shadow: inset 0 0 0 2px rgba(255, 226, 123, 0.18);
+}
+
+.contact-exact-submit:active {
+  transform: scale(0.985);
+  background: rgba(255, 202, 75, 0.14);
 }
 
 .contact-exact-submit:focus-visible {
   outline: 2px solid rgba(255, 229, 118, 0.86);
   outline-offset: 3px;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.44), 0 0 28px rgba(239, 182, 54, 0.34);
 }
 
 @media (min-width: 1024px) and (min-aspect-ratio: 3 / 2) {
