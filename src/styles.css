@@ -10410,6 +10410,9 @@ body:has(.exact-template-home) main {
 .exact-template-home__image--final {
   z-index: 0;
 }
+.exact-template-mobile-nav {
+  display: none;
+}
 .exact-template-actions {
   position: absolute;
   z-index: 6;
@@ -12557,47 +12560,136 @@ body:has(.collection-aaa) .site-header + main {
     min-width: 0 !important;
     max-width: 100svw !important;
     height: auto !important;
-    min-height: 0 !important;
+    min-height: 100svh !important;
     margin: 0 !important;
     padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
     overflow-x: clip !important;
   }
 
   .exact-template-home__stage {
-    display: grid !important;
-    justify-items: center !important;
-    align-items: start !important;
+    position: relative !important;
+    display: block !important;
+    justify-content: center !important;
+    align-items: center !important;
     width: 100svw !important;
     min-width: 0 !important;
     max-width: 100svw !important;
-    height: auto !important;
-    min-height: 0 !important;
+    height: 100svh !important;
+    min-height: 100svh !important;
     margin: 0 !important;
     padding: 0 !important;
-    overflow: clip !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
     line-height: 0 !important;
     background: #000 !important;
   }
 
+  .exact-template-home__stage::before {
+    display: none !important;
+  }
+
+  .exact-template-mobile-nav {
+    position: absolute !important;
+    top: clamp(0.9rem, 4.5svh, 2.45rem) !important;
+    left: 50% !important;
+    z-index: 8 !important;
+    display: flex !important;
+    width: min(calc(100svw - 1.45rem), 52rem) !important;
+    min-height: clamp(1.95rem, 5.7svh, 3rem) !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: clamp(0.32rem, 1.55vw, 0.72rem) !important;
+    padding: 0 clamp(0.45rem, 2.2vw, 1.05rem) !important;
+    border: 1px solid rgba(223, 161, 28, 0.78) !important;
+    border-radius: 999px !important;
+    background:
+      linear-gradient(180deg, rgba(9, 7, 3, 0.9), rgba(0, 0, 0, 0.72)),
+      rgba(0, 0, 0, 0.74) !important;
+    color: #f6bb2f !important;
+    font-family: Inter, system-ui, sans-serif !important;
+    line-height: 1 !important;
+    text-transform: uppercase !important;
+    box-shadow:
+      0 0 1.3rem rgba(222, 150, 22, 0.18),
+      inset 0 1px 0 rgba(255, 233, 142, 0.16) !important;
+    transform: translateX(-50%) !important;
+    backdrop-filter: blur(7px) !important;
+    -webkit-backdrop-filter: blur(7px) !important;
+  }
+
+  .exact-template-mobile-nav__link {
+    display: inline-flex !important;
+    min-width: 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #f6bb2f !important;
+    font-size: clamp(0.58rem, 3vw, 1.05rem) !important;
+    font-weight: 900 !important;
+    letter-spacing: 0 !important;
+    line-height: 1 !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    text-shadow: 0 0 0.75rem rgba(255, 204, 65, 0.28) !important;
+  }
+
+  .exact-template-mobile-nav__crown {
+    width: clamp(0.82rem, 4vw, 1.25rem) !important;
+    height: clamp(0.82rem, 4vw, 1.25rem) !important;
+    flex: 0 0 auto !important;
+    color: #f6bb2f !important;
+    stroke-width: 2.2 !important;
+  }
+
+  .exact-template-mobile-nav__dot {
+    width: 0.22rem !important;
+    height: 0.22rem !important;
+    flex: 0 0 auto !important;
+    border-radius: 999px !important;
+    background: #f6bb2f !important;
+    box-shadow: 0 0 0.52rem rgba(246, 187, 47, 0.78) !important;
+  }
+
+  .exact-template-mobile-nav__diamond {
+    width: clamp(0.45rem, 2.4vw, 0.72rem) !important;
+    height: clamp(0.45rem, 2.4vw, 0.72rem) !important;
+    flex: 0 0 auto !important;
+    background: linear-gradient(180deg, #ffe184, #d89714) !important;
+    transform: rotate(45deg) !important;
+    box-shadow: 0 0 0.75rem rgba(246, 187, 47, 0.4) !important;
+  }
+
+  .exact-template-mobile-nav__line {
+    display: none !important;
+  }
+
   .exact-template-home__stage picture {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 1 !important;
     display: block !important;
     width: 100svw !important;
     min-width: 0 !important;
     max-width: 100svw !important;
-    height: auto !important;
-    margin-inline: calc(50% - 50svw) !important;
+    height: 100svh !important;
+    max-height: 100svh !important;
+    margin-inline: 0 !important;
     line-height: 0 !important;
   }
 
   .exact-template-home__image {
     display: block !important;
-    width: 100svw !important;
+    width: 100% !important;
     min-width: 0 !important;
-    max-width: 100svw !important;
-    height: auto !important;
-    margin-inline: auto !important;
-    object-fit: contain !important;
-    object-position: center top !important;
+    max-width: none !important;
+    height: 100% !important;
+    max-height: none !important;
+    margin-inline: 0 !important;
+    object-fit: fill !important;
+    object-position: center center !important;
     transform: none !important;
   }
 
@@ -12608,14 +12700,37 @@ body:has(.collection-aaa) .site-header + main {
     body:has(.exact-template-home) .min-h-screen,
     .exact-template-home,
     .exact-template-home__stage,
-    .exact-template-home__stage picture,
-    .exact-template-home__image {
+    .exact-template-home__stage picture {
       width: 100dvw !important;
       max-width: 100dvw !important;
     }
 
+    .exact-template-home {
+      min-height: 100dvh !important;
+    }
+
+    .exact-template-home__stage {
+      height: 100dvh !important;
+      min-height: 100dvh !important;
+    }
+
     .exact-template-home__stage picture {
-      margin-inline: calc(50% - 50dvw) !important;
+      height: 100dvh !important;
+      margin-inline: 0 !important;
+      max-height: 100dvh !important;
+    }
+
+    .exact-template-mobile-nav {
+      top: clamp(0.9rem, 4.5dvh, 2.45rem) !important;
+      width: min(calc(100dvw - 1.45rem), 52rem) !important;
+      min-height: clamp(1.95rem, 5.7dvh, 3rem) !important;
+    }
+
+    .exact-template-home__image {
+      width: 100% !important;
+      max-width: none !important;
+      height: 100% !important;
+      max-height: none !important;
     }
   }
 

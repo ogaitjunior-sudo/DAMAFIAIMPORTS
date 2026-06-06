@@ -1,4 +1,4 @@
-import { ArrowRight, ShoppingBag, Ticket } from "lucide-react";
+import { ArrowRight, Crown, ShoppingBag, Ticket } from "lucide-react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
@@ -18,10 +18,33 @@ function Index() {
   return (
     <div className="exact-template-home" aria-label="DA MAFIA IMPORTS">
       <div className="exact-template-home__stage">
+        <nav className="exact-template-mobile-nav" aria-label="Navegacao principal mobile">
+          <span aria-hidden="true" className="exact-template-mobile-nav__line" />
+          <span aria-hidden="true" className="exact-template-mobile-nav__diamond" />
+          <Crown className="exact-template-mobile-nav__crown" aria-hidden="true" />
+          <Link to="/loja" className="exact-template-mobile-nav__link">
+            Importados
+          </Link>
+          <span aria-hidden="true" className="exact-template-mobile-nav__dot" />
+          <Link
+            to="/loja"
+            search={{ categoria: "CamisasTailandesas" }}
+            className="exact-template-mobile-nav__link"
+          >
+            FIFA
+          </Link>
+          <span aria-hidden="true" className="exact-template-mobile-nav__dot" />
+          <Link to="/rifas" className="exact-template-mobile-nav__link">
+            Ofertas Exclusivas
+          </Link>
+          <span aria-hidden="true" className="exact-template-mobile-nav__diamond" />
+          <span aria-hidden="true" className="exact-template-mobile-nav__line" />
+        </nav>
+
         <picture>
           <source
             media="(max-width: 768px), ((orientation: portrait) and (pointer: coarse))"
-            srcSet="/assets/da-mafia/home-hero-mobile-reference-20260605.png?v=mobile-hero-fit-viewport-20260606"
+            srcSet="/assets/da-mafia/home-hero-mobile-reference-20260605.png?v=mobile-hero-nav-overlay-20260606"
           />
           <img
             className="exact-template-home__image exact-template-home__image--final"
