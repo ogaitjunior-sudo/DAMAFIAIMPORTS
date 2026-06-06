@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ArrowRight,
   PackageCheck,
@@ -35,6 +35,11 @@ const categories: CategoryOption[] = [
   { key: "Dedeiras", label: "Dedeiras", eyebrow: "Limitadas" },
   { key: "Aparelhos", label: "Aparelhos", eyebrow: "Premium" },
 ];
+
+function categoryFromSearch(value: string | null): CategoryKey {
+  if (!value) return "Todos";
+  return categories.some((category) => category.key === value) ? (value as CategoryKey) : "Todos";
+}
 
 function normalizeText(value: string) {
   return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
@@ -217,12 +222,33 @@ function LojaPage() {
   const collectionProducts = mergeCuratedProducts(products);
   const list = collectionProducts.filter((p) => productMatchesCategory(p, cat));
 
+  useEffect(() => {
+    setCat(categoryFromSearch(new URLSearchParams(window.location.search).get("categoria")));
+  }, []);
+
   return (
     <div className="store-page collection-aaa">
       <section className="collection-reference-hero" aria-labelledby="collection-title">
         <h1 id="collection-title" className="collection-category-sr">
           Importados e Street Luxury
         </h1>
+        <div className="collection-mobile-hero-copy">
+          <span>Loja premium - Importados exclusivos</span>
+          <h2>
+            <span>Importados &</span>
+            <strong>Street Luxury</strong>
+          </h2>
+          <p>Produtos selecionados para quem busca exclusividade, estilo e presenca.</p>
+          <div className="collection-mobile-actions" aria-label="Acoes da colecao no mobile">
+            <a href="#produtos" className="collection-primary-action">
+              Ver colecao premium
+              <ArrowRight className="h-5 w-5" />
+            </a>
+            <a href="/contato" className="collection-secondary-action">
+              Como funciona
+            </a>
+          </div>
+        </div>
         <div className="collection-reference-hero__frame">
           <img
             src="/assets/da-mafia/colecao.png?v=colecao-bottom-edge-up-20260605"

@@ -5,13 +5,36 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+const mobileFeaturedCategories = [
+  {
+    label: "Relogios",
+    image: "/assets/da-mafia/watches/black-emperor-gold.jpg",
+    href: "/loja?categoria=Relogios#produtos",
+  },
+  {
+    label: "Perfumes",
+    image: "/assets/da-mafia/real-products/oud-mystery-intense.jpeg",
+    href: "/loja?categoria=Perfumes#produtos",
+  },
+  {
+    label: "Eletronicos",
+    image: "/assets/da-mafia/category-showcase-strip.jpg?v=mobile-category-aparelhos-20260605",
+    href: "/loja?categoria=Aparelhos#produtos",
+  },
+  {
+    label: "Camisas de time",
+    image: "/assets/da-mafia/product-jersey-gold.svg",
+    href: "/loja?categoria=CamisasTailandesas#produtos",
+  },
+];
+
 function Index() {
   return (
     <div className="exact-template-home" aria-label="DA MAFIA IMPORTS">
       <div className="exact-template-home__stage">
         <picture>
           <source
-            media="(max-width: 768px)"
+            media="(max-width: 768px), ((orientation: portrait) and (pointer: coarse))"
             srcSet="/assets/da-mafia/home-hero-mobile-reference-20260605.png?v=mobile-hero-reference-20260605"
           />
           <img
@@ -42,6 +65,25 @@ function Index() {
         <Link className="exact-template-hotspot exact-template-hotspot--contato" to="/contato" aria-label="Contato" />
         <Link className="exact-template-hotspot exact-template-hotspot--conta" to="/login" aria-label="Minha conta" />
       </div>
+
+      <section className="home-mobile-categories" aria-labelledby="home-mobile-categories-title">
+        <div className="home-mobile-categories__heading">
+          <h2 id="home-mobile-categories-title">Categorias em destaque</h2>
+          <span aria-hidden="true" />
+        </div>
+
+        <div className="home-mobile-categories__grid">
+          {mobileFeaturedCategories.map((category) => (
+            <a key={category.label} className="home-mobile-category-card" href={category.href}>
+              <span className="home-mobile-category-card__media" aria-hidden="true">
+                <img src={category.image} alt="" loading="lazy" />
+              </span>
+              <strong>{category.label}</strong>
+              <small>Ver produtos</small>
+            </a>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
