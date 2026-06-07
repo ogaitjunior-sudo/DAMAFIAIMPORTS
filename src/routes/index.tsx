@@ -66,7 +66,7 @@ function Index() {
         <picture>
           <source
             media="(max-width: 768px)"
-            srcSet="/assets/da-mafia/home-hero-mobile-functional-frame-20260607.png?v=mobile-functional-frame-20260607"
+            srcSet="/assets/da-mafia/home-mobile-exact-reference-20260607.png?v=mobile-exact-reference-20260607"
           />
           <img
             className="exact-template-home__image exact-template-home__image--final"

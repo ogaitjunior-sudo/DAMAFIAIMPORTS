@@ -15534,3 +15534,81 @@ body:has(.contact-exact-page) .site-header {
     border-radius: 0.85rem;
   }
 }
+
+/* Exact full-screen mobile home reference. The visible chrome lives in the
+   reference art while the real controls remain aligned and interactive. */
+@media (max-width: 768px) {
+  .exact-template-home__stage {
+    --home-mobile-topbar: 7.55%;
+    --home-mobile-bottom-nav: 5.86%;
+  }
+
+  .exact-template-home__stage picture {
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .exact-template-home__image {
+    object-fit: fill !important;
+    object-position: center !important;
+  }
+
+  .home-mobile-topbar {
+    height: var(--home-mobile-topbar);
+    padding: 0 1.55rem;
+    border: 0;
+    background: transparent;
+  }
+
+  .home-mobile-menu summary {
+    width: 3rem;
+    height: 3rem;
+    color: transparent;
+  }
+
+  .home-mobile-menu summary svg,
+  .home-mobile-tools svg,
+  .home-mobile-bottom-nav svg,
+  .home-mobile-bottom-nav span,
+  .home-mobile-brand {
+    opacity: 0;
+  }
+
+  .home-mobile-menu__panel {
+    top: calc(100% + 0.25rem);
+  }
+
+  .home-mobile-tools {
+    gap: 0.65rem;
+  }
+
+  .home-mobile-tools a {
+    width: 2.65rem;
+    height: 3rem;
+    color: transparent;
+  }
+
+  .exact-template-actions {
+    top: 34.6% !important;
+    left: 6.9% !important;
+    grid-template-columns: 44.6% 51.6% !important;
+    gap: 3.8% !important;
+    width: 86.3% !important;
+    height: 6.12% !important;
+  }
+
+  .home-mobile-bottom-nav {
+    height: var(--home-mobile-bottom-nav);
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .home-mobile-bottom-nav a {
+    height: 100%;
+    gap: 0;
+    color: transparent;
+  }
+}
