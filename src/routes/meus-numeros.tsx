@@ -13,7 +13,6 @@ import {
   type LucideIcon,
   MessageCircle,
   PackageCheck,
-  Phone,
   Search,
   ShieldCheck,
   ShoppingBag,
@@ -24,12 +23,10 @@ import {
   Wallet,
   XCircle,
 } from "lucide-react";
-import { useEffect, useMemo, useState, type CSSProperties, type FormEvent } from "react";
+import { useEffect, useMemo, useState, type CSSProperties } from "react";
 
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { getCurrentUser, getMyNumbers } from "@/lib/api";
 import { publicErrorMessage } from "@/lib/client-errors";
 import { imageFor } from "@/lib/gallery";
@@ -83,9 +80,6 @@ const statusCopy: Record<DisplayStatus, { label: string; className: string; icon
 };
 
 function MyNumbersPage() {
-  const [whatsapp, setWhatsapp] = useState("");
-  const [draftWhatsapp, setDraftWhatsapp] = useState("");
-  const [modalOpen, setModalOpen] = useState(false);
   const [entries, setEntries] = useState<MyNumbersEntry[]>([]);
   const [filter, setFilter] = useState<FilterMode>("all");
   const [query, setQuery] = useState("");
@@ -116,12 +110,8 @@ function MyNumbersPage() {
 
       if (isValidBrazilianWhatsapp(storedWhatsapp)) {
         const formatted = formatBrazilianWhatsapp(storedWhatsapp);
-        setWhatsapp(formatted);
-        setDraftWhatsapp(formatted);
         saveStoredWhatsapp(formatted);
         await loadEntries(formatted);
-      } else {
-        setModalOpen(true);
       }
     })();
 
@@ -172,20 +162,6 @@ function MyNumbersPage() {
     [entries],
   );
 
-  const submitWhatsapp = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    if (!isValidBrazilianWhatsapp(draftWhatsapp)) {
-      setError("Informe um WhatsApp valido com DDD.");
-      return;
-    }
-
-    const formatted = formatBrazilianWhatsapp(draftWhatsapp);
-    setWhatsapp(formatted);
-    saveStoredWhatsapp(formatted);
-    setModalOpen(false);
-    void loadEntries(formatted);
-  };
-
   const copyCode = async (entry: MyNumbersEntry) => {
     const value = entry.validationCode || entry.pixCopyPaste || formatTicketList(entry.numbers);
     await navigator.clipboard.writeText(value);
@@ -216,10 +192,6 @@ function MyNumbersPage() {
         </div>
 
         <div className="mobile-orders-tools">
-          <button type="button" onClick={() => setModalOpen(true)}>
-            <Phone aria-hidden="true" />
-            {whatsapp ? whatsapp : "Informar WhatsApp"}
-          </button>
           <label>
             <Search aria-hidden="true" />
             <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Buscar pedido" />
@@ -249,7 +221,7 @@ function MyNumbersPage() {
           <div className="mobile-orders-empty">
             <PackageCheck aria-hidden="true" />
             <strong>Nenhum pedido encontrado</strong>
-            <span>Informe seu WhatsApp para localizar suas compras.</span>
+            <span>Nenhuma compra foi localizada por enquanto.</span>
           </div>
         )}
 
@@ -292,10 +264,6 @@ function MyNumbersPage() {
             </h1>
             <p>Acompanhe todas as rifas em que voce participa, confira pagamentos, codigos de validacao e numeros reservados.</p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Button type="button" onClick={() => setModalOpen(true)} className="bg-gradient-gold text-background font-semibold gold-shine">
-                <Phone className="h-4 w-4 mr-2" />
-                {whatsapp ? "Trocar WhatsApp" : "Informar WhatsApp"}
-              </Button>
               <Button asChild variant="outline" className="border-gold/35 text-cream hover:bg-gold/10">
                 <Link to="/validar">Validar Compra</Link>
               </Button>
@@ -303,10 +271,6 @@ function MyNumbersPage() {
           </div>
 
           <div className="my-numbers-hero-panel">
-            <div className="my-numbers-stat">
-              <span>WhatsApp cadastrado</span>
-              <strong>{whatsapp || "Obrigatorio"}</strong>
-            </div>
             <div className="my-numbers-stat">
               <span>Rifas ativas</span>
               <strong>{stats.raffles}</strong>
@@ -362,7 +326,7 @@ function MyNumbersPage() {
         ) : (
           <div className="my-empty">
             <Ticket className="mx-auto mb-3 h-10 w-10 text-primary" />
-            Nenhuma participacao encontrada para este WhatsApp.
+            Nenhuma participacao encontrada.
           </div>
         )}
 
@@ -381,42 +345,6 @@ function MyNumbersPage() {
           </div>
         </section>
       </div>
-
-      <Dialog open={modalOpen} onOpenChange={(open) => (whatsapp ? setModalOpen(open) : setModalOpen(true))}>
-        <DialogContent className="max-w-md border-gold/35 bg-card">
-          <div className="whatsapp-gate-card">
-            <DialogHeader>
-              <div className="whatsapp-gate-icon">
-                <MessageCircle className="h-7 w-7" />
-              </div>
-              <DialogTitle className="text-center font-display text-3xl">Informe seu WhatsApp</DialogTitle>
-              <p className="text-center text-sm text-muted-foreground">
-                Utilizamos seu numero para localizar suas rifas, pagamentos e numeros reservados.
-              </p>
-            </DialogHeader>
-            <form onSubmit={submitWhatsapp} className="mt-5 space-y-4">
-              <div>
-                <Label htmlFor="myWhatsapp">WhatsApp</Label>
-                <Input
-                  id="myWhatsapp"
-                  type="tel"
-                  inputMode="tel"
-                  value={draftWhatsapp}
-                  onChange={(event) => setDraftWhatsapp(formatBrazilianWhatsapp(event.target.value))}
-                  placeholder="(71) 92929-9927"
-                  className="mt-2"
-                  autoComplete="tel"
-                  required
-                />
-              </div>
-              <Button className="w-full bg-gradient-gold text-background font-semibold gold-shine">
-                <CheckCircle2 className="h-4 w-4 mr-2" />
-                Continuar
-              </Button>
-            </form>
-          </div>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 }

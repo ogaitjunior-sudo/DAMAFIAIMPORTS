@@ -3994,7 +3994,7 @@
     margin: 0 auto;
     padding: 3.5rem 0;
   }
-  .my-numbers-hero, .my-numbers-card, .my-numbers-toolbar, .my-numbers-security, .whatsapp-gate-card {
+  .my-numbers-hero, .my-numbers-card, .my-numbers-toolbar, .my-numbers-security {
     border: 1px solid oklch(0.72 0.15 82 / 0.35);
     background: linear-gradient(145deg, oklch(0.11 0.02 58 / 0.82), oklch(0.06 0.01 45 / 0.88));
     box-shadow: 0 0 0 1px oklch(0.95 0.1 88 / 0.05) inset, 0 1.25rem 4rem oklch(0.02 0.02 35 / 0.72);
@@ -4195,21 +4195,6 @@
     color: oklch(0.9 0.02 82 / 0.75);
   }
   .my-numbers-security svg {
-    color: oklch(0.84 0.16 82);
-  }
-  .whatsapp-gate-card {
-    border-radius: 1.2rem;
-    padding: 1rem;
-  }
-  .whatsapp-gate-icon {
-    display: grid;
-    place-items: center;
-    width: 3.2rem;
-    height: 3.2rem;
-    margin: 0 auto 1rem;
-    border: 1px solid oklch(0.84 0.16 82 / 0.45);
-    border-radius: 999px;
-    box-shadow: 0 0 28px oklch(0.76 0.14 82 / 0.24);
     color: oklch(0.84 0.16 82);
   }
   .my-empty {
@@ -4448,7 +4433,7 @@
 
   .mobile-orders-tools {
     display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
+    grid-template-columns: 1fr;
     gap: 0.55rem;
     margin-top: 0.8rem;
   }
@@ -11882,36 +11867,32 @@ body:has(.collection-aaa) .site-header + main {
   transition: box-shadow 0.25s ease, background 0.25s ease;
 }
 .collection-category-hotspots button:nth-child(1) {
-  left: 1.8%;
-  width: 12.35%;
+  left: 2.07%;
+  width: 14.2%;
 }
 .collection-category-hotspots button:nth-child(2) {
-  left: 14.35%;
-  width: 12.9%;
+  left: 16.49%;
+  width: 14.83%;
 }
 .collection-category-hotspots button:nth-child(3) {
-  left: 27.45%;
-  width: 11.5%;
+  left: 31.55%;
+  width: 13.22%;
 }
 .collection-category-hotspots button:nth-child(4) {
-  left: 39.2%;
-  width: 11.85%;
+  left: 45.06%;
+  width: 13.62%;
 }
 .collection-category-hotspots button:nth-child(5) {
-  left: 51.25%;
-  width: 11.0%;
+  left: 58.91%;
+  width: 12.64%;
 }
 .collection-category-hotspots button:nth-child(6) {
-  left: 62.6%;
-  width: 12.35%;
+  left: 71.95%;
+  width: 14.2%;
 }
 .collection-category-hotspots button:nth-child(7) {
-  left: 75.2%;
-  width: 11.55%;
-}
-.collection-category-hotspots button:nth-child(8) {
-  left: 87.0%;
-  width: 11.65%;
+  left: 86.44%;
+  width: 13.28%;
 }
 .collection-category-hotspots button::after {
   position: absolute;

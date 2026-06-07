@@ -25,8 +25,7 @@ type CategoryKey =
   | "Correntes"
   | "Pingentes"
   | "Pulseiras"
-  | "Dedeiras"
-  | "Aparelhos";
+  | "Dedeiras";
 
 type CategoryOption = {
   key: Exclude<CategoryKey, "Todos">;
@@ -35,14 +34,13 @@ type CategoryOption = {
 };
 
 const categories: CategoryOption[] = [
-  { key: "CamisasTailandesas", label: "Camisas Tailandesas", eyebrow: "Street luxury" },
+  { key: "CamisasTailandesas", label: "Camisas de Futebol", eyebrow: "Premium Jerseys" },
   { key: "Perfumes", label: "Perfumes", eyebrow: "Importados" },
   { key: "Relogios", label: "Relógios", eyebrow: "Premium" },
   { key: "Correntes", label: "Correntes", eyebrow: "Gold style" },
   { key: "Pingentes", label: "Pingentes", eyebrow: "Exclusivos" },
   { key: "Pulseiras", label: "Pulseiras", eyebrow: "Selecionadas" },
   { key: "Dedeiras", label: "Dedeiras", eyebrow: "Limitadas" },
-  { key: "Aparelhos", label: "Aparelhos", eyebrow: "Premium" },
 ];
 
 function categoryFromSearch(value: string | null): CategoryKey {
@@ -59,14 +57,10 @@ function legacyCategoryKey(category: string): CategoryKey {
     ["Cava" + "quinhos"]: "Perfumes",
     ["Cor" + "das"]: "CamisasTailandesas",
     ["Capo" + "traste"]: "Correntes",
-    ["Pal" + "hetas"]: "Aparelhos",
     ["Afi" + "nadores"]: "Relogios",
-    ["Ca" + "ses"]: "Aparelhos",
     Jerseys: "CamisasTailandesas",
-    Sneakers: "Aparelhos",
     Relogios: "Relogios",
     Acessorios: "Correntes",
-    Premium: "Aparelhos",
   };
   return aliases[category] ?? (category as CategoryKey);
 }
@@ -92,17 +86,6 @@ function productMatchesCategory(product: Product, category: CategoryKey) {
       return text.includes("pulseira") || text.includes("bracelet") || normalizeText(product.category) === "pulseiras";
     case "Dedeiras":
       return text.includes("dedeira") || text.includes("anel") || text.includes("ring") || normalizeText(product.category) === "dedeiras";
-    case "Aparelhos":
-      return (
-        legacy === category ||
-        text.includes("aparelho") ||
-        text.includes("iphone") ||
-        text.includes("celular") ||
-        text.includes("smartphone") ||
-        text.includes("console") ||
-        text.includes("playstation") ||
-        text.includes("eletronico")
-      );
     default:
       return false;
   }
@@ -215,7 +198,7 @@ function LojaPage() {
         <h2 id="category-title" className="collection-category-sr">Categorias</h2>
 
         <div className="collection-category-showcase">
-          <img src="/assets/da-mafia/category-showcase-strip.jpg?v=original-symbol-20260528" alt="" />
+          <img src="/assets/da-mafia/category-showcase-strip.jpg?v=camisas-futebol-ajuste-20260607" alt="" />
           <div className="collection-category-hotspots" role="tablist" aria-label="Categorias da loja">
             {categories.map(({ key, label, eyebrow }) => (
               <button

@@ -11,24 +11,21 @@ function categoryLabel(product: Product) {
   const text = normalizeText(`${product.name} ${product.description} ${product.category}`);
   const aliases: Record<string, string> = {
     ["Cava" + "quinhos"]: "Perfumes",
-    ["Cor" + "das"]: "Camisas Tailandesas",
-    ["Pal" + "hetas"]: "Aparelhos",
+    ["Cor" + "das"]: "Camisas de Futebol",
     ["Afi" + "nadores"]: "Relógios",
-    ["Ca" + "ses"]: "Aparelhos",
-    Jerseys: "Camisas Tailandesas",
-    Sneakers: "Aparelhos",
+    Jerseys: "Camisas de Futebol",
     Relogios: "Relógios",
-    Premium: "Aparelhos",
+    Premium: "Premium",
   };
 
   if (product.category === "Perfumes" || text.includes("perfume") || text.includes("fragrancia")) return "Perfumes";
-  if (text.includes("camisa") || text.includes("tailandesa") || text.includes("jersey")) return "Camisas Tailandesas";
+  if (text.includes("camisa") || text.includes("tailandesa") || text.includes("jersey")) return "Camisas de Futebol";
   if (text.includes("relogio") || text.includes("watch")) return "Relógios";
   if (text.includes("corrente") || text.includes("chain")) return "Correntes";
   if (text.includes("pingente") || text.includes("pendant")) return "Pingentes";
   if (text.includes("pulseira") || text.includes("bracelet")) return "Pulseiras";
   if (text.includes("dedeira") || text.includes("anel") || text.includes("ring")) return "Dedeiras";
-  if (text.includes("aparelho") || text.includes("iphone") || text.includes("celular") || text.includes("smartphone") || text.includes("console") || text.includes("playstation")) return "Aparelhos";
+  if (text.includes("aparelho") || text.includes("iphone") || text.includes("celular") || text.includes("smartphone") || text.includes("console") || text.includes("playstation")) return "Premium";
 
   return aliases[product.category] ?? "Correntes";
 }
@@ -37,15 +34,13 @@ function productTone(product: Product) {
   switch (categoryLabel(product)) {
     case "Perfumes":
       return "aaa-product-card--perfume";
-    case "Camisas Tailandesas":
+    case "Camisas de Futebol":
       return "aaa-product-card--jersey";
     case "Correntes":
     case "Pingentes":
     case "Pulseiras":
     case "Dedeiras":
       return "aaa-product-card--exclusive";
-    case "Aparelhos":
-      return "aaa-product-card--electronic";
     case "Relógios":
       return "aaa-product-card--watch";
     default:
