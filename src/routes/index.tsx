@@ -44,7 +44,7 @@ function Index() {
         <picture>
           <source
             media="(max-width: 768px), ((orientation: portrait) and (pointer: coarse))"
-            srcSet="/assets/da-mafia/home-hero-mobile-reference-20260605.png?v=mobile-hero-nav-overlay-20260606"
+            srcSet="/assets/da-mafia/home-hero-mobile-aero-20260606.png?v=aero-mobile-final-20260606"
           />
           <img
             className="exact-template-home__image exact-template-home__image--final"

@@ -13219,241 +13219,143 @@ body:has(.collection-aaa) .site-header + main {
 
 @media (max-width: 768px) {
   html:has(.exact-template-home),
-  body:has(.exact-template-home) {
+  body:has(.exact-template-home),
+  body:has(.exact-template-home) main,
+  body:has(.exact-template-home) .min-h-screen,
+  .exact-template-home,
+  .exact-template-home__stage,
+  .exact-template-home__stage picture {
     width: 100vw !important;
     max-width: 100vw !important;
+    min-width: 0 !important;
     overflow-x: hidden !important;
   }
 
-  body:has(.exact-template-home) {
-    min-height: 100svh !important;
+  body:has(.exact-template-home) .site-header {
+    display: none !important;
+  }
+
+  body:has(.exact-template-home),
+  .exact-template-home {
     background: #000 !important;
-    overscroll-behavior-x: none;
   }
 
   body:has(.exact-template-home) main,
   body:has(.exact-template-home) .min-h-screen {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    min-width: 0 !important;
     padding-top: 0 !important;
-    overflow-x: hidden !important;
   }
 
-  body:has(.exact-template-home) *,
-  body:has(.exact-template-home) *::before,
-  body:has(.exact-template-home) *::after {
-    box-sizing: border-box;
-  }
-
-  .hero-mobile,
   .exact-template-home {
-    display: flex !important;
-    width: 100vw !important;
-    max-width: 100vw !important;
+    display: block !important;
+    height: 100svh !important;
     min-height: 100svh !important;
     margin: 0 !important;
-    padding: 0 16px !important;
-    align-items: center !important;
-    justify-content: center !important;
+    padding: 0 !important;
     overflow: hidden !important;
-  }
-
-  .hero-mobile,
-  .hero-mobile > *,
-  .exact-template-home,
-  .exact-template-home__stage,
-  .exact-template-home__stage picture {
-    max-width: 100vw !important;
   }
 
   .exact-template-home__stage {
     position: relative !important;
-    width: 100% !important;
-    max-width: 100% !important;
     height: 100svh !important;
     min-height: 100svh !important;
-    margin: 0 auto !important;
+    margin: 0 !important;
     padding: 0 !important;
     overflow: hidden !important;
     background: #000 !important;
+    line-height: 0 !important;
   }
 
   .exact-template-home__stage picture {
     position: absolute !important;
-    top: -30px !important;
-    right: 0 !important;
-    bottom: auto !important;
-    left: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: calc(100svh + 30px) !important;
-    max-height: none !important;
+    inset: 0 !important;
+    z-index: 1 !important;
+    display: block !important;
+    height: 100svh !important;
+    max-height: 100svh !important;
     margin: 0 !important;
+    line-height: 0 !important;
   }
 
   .exact-template-home__image {
     display: block !important;
     width: 100% !important;
-    max-width: 100% !important;
     height: 100% !important;
+    max-width: none !important;
     max-height: none !important;
     object-fit: fill !important;
-    object-position: center top !important;
+    object-position: center center !important;
     transform: none !important;
   }
 
-  @supports (height: 100dvh) {
-    body:has(.exact-template-home),
-    .hero-mobile,
-    .exact-template-home,
-    .exact-template-home__stage {
-      min-height: 100dvh !important;
-    }
-
-    .exact-template-home__stage {
-      height: 100dvh !important;
-    }
-
-    .exact-template-home__stage picture {
-      height: calc(100dvh + 30px) !important;
-    }
-  }
-
-  .mobile-top-banner,
   .exact-template-mobile-nav {
-    top: max(16px, env(safe-area-inset-top)) !important;
-    left: 50% !important;
-    width: min(calc(100vw - 32px), 340px) !important;
-    max-width: 340px !important;
-    min-height: 40px !important;
-    margin: 0 auto !important;
-    padding: 0 14px !important;
-    gap: clamp(0.24rem, 1.25vw, 0.45rem) !important;
-    border-color: rgba(255, 211, 83, 0.86) !important;
-    background:
-      linear-gradient(180deg, rgba(12, 10, 7, 0.94), rgba(0, 0, 0, 0.78)),
-      rgba(0, 0, 0, 0.82) !important;
-    box-shadow:
-      0 0 20px rgba(246, 187, 47, 0.18),
-      inset 0 1px 0 rgba(255, 236, 160, 0.18) !important;
-    transform: translateX(-50%) !important;
-  }
-
-  .exact-template-mobile-nav__link {
-    font-size: clamp(0.62rem, 2.62vw, 0.78rem) !important;
-    line-height: 1 !important;
-    white-space: nowrap !important;
-  }
-
-  .exact-template-mobile-nav__crown {
-    width: 1rem !important;
-    height: 1rem !important;
-  }
-
-  .exact-template-mobile-nav__diamond {
-    width: 0.5rem !important;
-    height: 0.5rem !important;
-  }
-
-  .hero-buttons,
-  .exact-template-actions {
-    top: 32.6% !important;
-    left: 50% !important;
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 12px !important;
-    width: min(calc(100vw - 32px), 340px) !important;
-    max-width: 340px !important;
-    transform: translateX(-50%) !important;
-    opacity: 1 !important;
+    position: absolute !important;
+    top: 6.35% !important;
+    left: 13% !important;
+    z-index: 10 !important;
+    display: flex !important;
+    width: 74% !important;
+    height: 3.45% !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    opacity: 0 !important;
+    transform: none !important;
     pointer-events: auto !important;
   }
 
-  .hero-buttons button,
-  .exact-template-action {
+  .exact-template-mobile-nav * {
+    opacity: 0 !important;
+  }
+
+  .exact-template-actions {
+    position: absolute !important;
+    top: 36.35% !important;
+    left: 7.85% !important;
+    z-index: 10 !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr) !important;
+    gap: 3.4% !important;
+    width: 84.3% !important;
+    height: 6.3% !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+  }
+
+  .exact-template-action,
+  .exact-template-action--primary,
+  .exact-template-action--secondary {
     width: 100% !important;
+    height: 100% !important;
     min-width: 0 !important;
-    min-height: 56px !important;
-    padding: 0 0.62rem !important;
-    justify-content: center !important;
-    gap: 0.35rem !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0.75rem !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: transparent !important;
     overflow: hidden !important;
-    text-align: center !important;
-    white-space: nowrap !important;
-    font-size: clamp(0.6rem, 2.65vw, 0.76rem) !important;
-    line-height: 1 !important;
   }
 
-  .exact-template-action svg {
-    width: 1.18rem !important;
-    height: 1.18rem !important;
-  }
-
-  .exact-template-action__arrow {
-    width: 1.95rem !important;
-    height: 1.95rem !important;
-    margin-left: auto !important;
-    padding: 0.33rem !important;
-  }
-
-  .exact-template-action__ticket {
-    margin-left: auto !important;
-  }
-
-  .mafia-avatar-stack,
-  .exact-template-home__stage .mafia-avatar-stack {
+  .exact-template-action::before,
+  .exact-template-action::after {
     display: none !important;
+    content: none !important;
   }
 
-  .exact-template-home__stage::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 7;
-    display: block !important;
-    width: 100%;
-    height: 28px;
-    pointer-events: none;
-    content: "";
-    background: #000;
-  }
-
-  .exact-template-home__stage::after {
-    position: absolute;
-    top: 40.7%;
-    left: 7%;
-    z-index: 5;
-    width: 38%;
-    height: 9%;
-    border-radius: 999px;
-    pointer-events: none;
-    content: "";
-    background:
-      linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.99) 94%, rgba(0, 0, 0, 0)),
-      radial-gradient(circle at 30% 55%, rgba(246, 187, 47, 0.04), rgba(0, 0, 0, 0) 66%);
-    box-shadow: 0 0 26px 18px rgba(0, 0, 0, 0.94);
-  }
-
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    width: 100%;
-    max-width: 100vw;
-    padding-left: 12px;
-    padding-right: 12px;
-    overflow: hidden;
-  }
-
-  .features-grid svg {
-    width: 1.2em;
-    height: 1.2em;
-  }
-
-  .features-grid small,
-  .features-grid p {
-    font-size: 0.86em;
-    line-height: 1.2;
+  .exact-template-action span,
+  .exact-template-action svg,
+  .exact-template-action * {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    color: transparent !important;
+    background: transparent !important;
+    box-shadow: none !important;
   }
 }
 body:has(.contact-page) {
