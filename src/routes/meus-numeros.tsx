@@ -1,18 +1,30 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
+  Box,
+  CalendarDays,
   CheckCircle2,
+  CircleCheckBig,
+  Clock3,
   ClipboardCheck,
   Copy,
+  FileText,
+  Home,
+  LayoutGrid,
   type LucideIcon,
   MessageCircle,
+  PackageCheck,
   Phone,
   Search,
   ShieldCheck,
+  ShoppingBag,
+  ShoppingCart,
   Ticket,
+  Truck,
+  UserRound,
   Wallet,
   XCircle,
 } from "lucide-react";
-import { useEffect, useMemo, useState, type FormEvent } from "react";
+import { useEffect, useMemo, useState, type CSSProperties, type FormEvent } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -32,7 +44,7 @@ import {
 
 export const Route = createFileRoute("/meus-numeros")({
   component: MyNumbersPage,
-  head: () => ({ meta: [{ title: "Meus Numeros - DA MAFIA IMPORTS" }] }),
+  head: () => ({ meta: [{ title: "Meus Pedidos - DA MAFIA IMPORTS" }] }),
 });
 
 type MyNumbersEntry = {
@@ -150,6 +162,16 @@ function MyNumbersPage() {
     };
   }, [entries]);
 
+  const mobileOrderStats = useMemo(
+    () => ({
+      total: entries.length,
+      processing: entries.filter((entry) => getDisplayStatus(entry) === "paid").length,
+      delivered: entries.filter((entry) => getDisplayStatus(entry) === "confirmed").length,
+      pending: entries.filter((entry) => getDisplayStatus(entry) === "pending").length,
+    }),
+    [entries],
+  );
+
   const submitWhatsapp = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!isValidBrazilianWhatsapp(draftWhatsapp)) {
@@ -173,6 +195,90 @@ function MyNumbersPage() {
 
   return (
     <div className="my-numbers-page">
+      <section className="mobile-orders-page" aria-label="Meus pedidos">
+        <div className="mobile-orders-heading">
+          <Box aria-hidden="true" />
+          <div>
+            <h1>
+              Meus <span>Pedidos</span>
+            </h1>
+            <p>
+              Acompanhe todas as suas compras em <span>tempo real.</span>
+            </p>
+          </div>
+        </div>
+
+        <div className="mobile-orders-stats" aria-label="Resumo dos pedidos">
+          <MobileOrderStat icon={ShoppingBag} value={mobileOrderStats.total} label="Pedidos totais" />
+          <MobileOrderStat icon={Truck} value={mobileOrderStats.processing} label="Em analise" />
+          <MobileOrderStat icon={CircleCheckBig} value={mobileOrderStats.delivered} label="Confirmados" />
+          <MobileOrderStat icon={Clock3} value={mobileOrderStats.pending} label="Pendentes" />
+        </div>
+
+        <div className="mobile-orders-tools">
+          <button type="button" onClick={() => setModalOpen(true)}>
+            <Phone aria-hidden="true" />
+            {whatsapp ? whatsapp : "Informar WhatsApp"}
+          </button>
+          <label>
+            <Search aria-hidden="true" />
+            <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Buscar pedido" />
+          </label>
+        </div>
+
+        {loading ? (
+          <div className="mobile-orders-list">
+            <div className="mobile-order-card mobile-order-card--loading" />
+            <div className="mobile-order-card mobile-order-card--loading" />
+          </div>
+        ) : error ? (
+          <div className="mobile-orders-empty">{error}</div>
+        ) : filteredEntries.length ? (
+          <div className="mobile-orders-list">
+            {filteredEntries.map((entry, index) => (
+              <MobileOrderCard
+                key={entry.id}
+                entry={entry}
+                featured={index === 0}
+                copied={copiedId === entry.id}
+                onCopy={() => copyCode(entry)}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className="mobile-orders-empty">
+            <PackageCheck aria-hidden="true" />
+            <strong>Nenhum pedido encontrado</strong>
+            <span>Informe seu WhatsApp para localizar suas compras.</span>
+          </div>
+        )}
+
+        {filteredEntries[0] ? <MobileOrderTimeline entry={filteredEntries[0]} /> : null}
+
+        <nav className="mobile-orders-bottom-nav" aria-label="Navegacao principal">
+          <Link to="/">
+            <Home aria-hidden="true" />
+            <span>Inicio</span>
+          </Link>
+          <Link to="/loja">
+            <LayoutGrid aria-hidden="true" />
+            <span>Produtos</span>
+          </Link>
+          <Link to="/rifas">
+            <Ticket aria-hidden="true" />
+            <span>Rifas</span>
+          </Link>
+          <Link to="/meus-numeros" className="is-active">
+            <Box aria-hidden="true" />
+            <span>Pedidos</span>
+          </Link>
+          <Link to="/login">
+            <UserRound aria-hidden="true" />
+            <span>Perfil</span>
+          </Link>
+        </nav>
+      </section>
+
       <div className="my-numbers-shell">
         <section className="my-numbers-hero">
           <div>
@@ -313,6 +419,136 @@ function MyNumbersPage() {
       </Dialog>
     </div>
   );
+}
+
+function MobileOrderStat({ icon: Icon, value, label }: { icon: LucideIcon; value: number; label: string }) {
+  return (
+    <article>
+      <Icon aria-hidden="true" />
+      <strong>{value}</strong>
+      <span>{label}</span>
+    </article>
+  );
+}
+
+function MobileOrderCard({
+  entry,
+  featured,
+  copied,
+  onCopy,
+}: {
+  entry: MyNumbersEntry;
+  featured: boolean;
+  copied: boolean;
+  onCopy: () => void;
+}) {
+  const status = getDisplayStatus(entry);
+  const meta = mobileOrderStatus(status);
+  const StatusIcon = meta.icon;
+  const code = entry.validationCode || entry.id.slice(-6).toUpperCase();
+
+  return (
+    <article className={featured ? "mobile-order-card is-featured" : "mobile-order-card"}>
+      <header>
+        <div className="mobile-order-id">
+          <Box aria-hidden="true" />
+          <strong>
+            Pedido <span>#{code}</span>
+          </strong>
+        </div>
+        <span className={`mobile-order-status ${meta.className}`}>
+          <StatusIcon aria-hidden="true" />
+          {meta.label}
+        </span>
+      </header>
+
+      <div className="mobile-order-meta">
+        <span>
+          <CalendarDays aria-hidden="true" />
+          {formatDate(entry.createdAt)}
+        </span>
+        <i />
+        <span>
+          <Wallet aria-hidden="true" />
+          {formatMoney(entry.totalAmount)}
+        </span>
+      </div>
+
+      {featured ? <MobileOrderProgress status={status} /> : null}
+
+      <div className="mobile-order-actions">
+        <button type="button" onClick={onCopy}>
+          <FileText aria-hidden="true" />
+          {copied ? "Copiado" : featured ? "Ver detalhes" : "Ver pedido"}
+        </button>
+        <Link to={status === "pending" ? "/validar" : "/rifas"} className={featured ? "is-primary" : ""}>
+          {featured ? <Search aria-hidden="true" /> : <ShoppingCart aria-hidden="true" />}
+          {featured ? "Validar pedido" : "Comprar novamente"}
+        </Link>
+      </div>
+    </article>
+  );
+}
+
+function MobileOrderProgress({ status }: { status: DisplayStatus }) {
+  const activeStep = status === "pending" ? 1 : status === "paid" ? 3 : status === "confirmed" ? 4 : 0;
+  const steps = ["Pedido confirmado", "Pagamento", "Numeros reservados", "Confirmado"];
+
+  return (
+    <div className="mobile-order-progress" style={{ "--mobile-order-progress": `${(activeStep / (steps.length - 1)) * 100}%` } as CSSProperties}>
+      {steps.map((step, index) => (
+        <span key={step} className={index <= activeStep ? "is-complete" : ""}>
+          <b>{index < activeStep ? <CheckCircle2 aria-hidden="true" /> : index === activeStep ? <Ticket aria-hidden="true" /> : null}</b>
+          <small>{step}</small>
+        </span>
+      ))}
+    </div>
+  );
+}
+
+function MobileOrderTimeline({ entry }: { entry: MyNumbersEntry }) {
+  const status = getDisplayStatus(entry);
+  const code = entry.validationCode || entry.id.slice(-6).toUpperCase();
+  const events = [
+    { title: "Pedido recebido", detail: "Recebemos sua compra com sucesso.", done: true },
+    { title: "Pagamento aprovado", detail: "Seu pagamento foi identificado.", done: status !== "pending" },
+    { title: "Numeros reservados", detail: `${entry.numbers.length} numero(s) vinculados ao pedido.`, done: status === "paid" || status === "confirmed" },
+    { title: "Compra confirmada", detail: "Seu codigo de validacao esta disponivel.", done: status === "confirmed" },
+  ];
+
+  return (
+    <section className="mobile-order-timeline" aria-label={`Acompanhamento do pedido ${code}`}>
+      <h2>
+        <Clock3 aria-hidden="true" />
+        Acompanhamento do pedido <span>#{code}</span>
+      </h2>
+      <div>
+        {events.map((event, index) => (
+          <article key={event.title} className={event.done ? "is-complete" : ""}>
+            <time>{formatTimelineDate(entry, index)}</time>
+            <b />
+            <p>
+              <strong>{event.title}</strong>
+              <span>{event.detail}</span>
+            </p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function mobileOrderStatus(status: DisplayStatus): { label: string; className: string; icon: LucideIcon } {
+  if (status === "pending") return { label: "Pendente", className: "is-pending", icon: Clock3 };
+  if (status === "confirmed") return { label: "Confirmado", className: "is-confirmed", icon: CircleCheckBig };
+  if (status === "canceled") return { label: "Cancelado", className: "is-canceled", icon: XCircle };
+  return { label: "Em analise", className: "is-processing", icon: Truck };
+}
+
+function formatTimelineDate(entry: MyNumbersEntry, offset: number) {
+  const date = new Date(entry.createdAt);
+  date.setMinutes(date.getMinutes() + offset * 15);
+  return new Intl.DateTimeFormat("pt-BR", { day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit" }).format(date);
 }
 
 function MyNumbersCard({ entry, copied, onCopy }: { entry: MyNumbersEntry; copied: boolean; onCopy: () => void }) {

@@ -42,6 +42,15 @@ export function Header() {
           </Link>
         </div>
 
+        <Link
+          to="/loja"
+          className="original-template-mobile-cart"
+          aria-label="Carrinho, 0 itens"
+        >
+          <ShoppingCart aria-hidden="true" />
+          <span>CARRINHO 0</span>
+        </Link>
+
         <button
           className="original-template-menu-button lg:hidden"
           onClick={() => setOpen(!open)}

@@ -1,5 +1,6 @@
 import type { FormEvent } from "react";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Crown, Menu, ShoppingCart } from "lucide-react";
 
 export const Route = createFileRoute("/contato")({
   component: ContatoPage,
@@ -102,6 +103,37 @@ function ContatoPage() {
       </section>
 
       <section className="contact-mobile-shell" aria-label="Contato DA MAFIA IMPORTS mobile">
+        <header className="contact-mobile-sitebar" aria-label="Topo mobile">
+          <details className="contact-mobile-sitebar__menu">
+            <summary aria-label="Abrir menu">
+              <Menu aria-hidden="true" />
+            </summary>
+            <nav className="contact-mobile-sitebar__panel" aria-label="Menu mobile">
+              <Link to="/">Inicio</Link>
+              <Link to="/loja">Produtos</Link>
+              <Link to="/rifas">Rifas</Link>
+              <Link to="/meus-numeros">Pedidos</Link>
+              <Link to="/contato">Contato</Link>
+              <Link to="/login">Conta</Link>
+            </nav>
+          </details>
+
+          <Link to="/" className="contact-mobile-sitebar__brand" aria-label="Inicio DA MAFIA IMPORTS">
+            <span>DA MAFIA</span>
+            <small>
+              <Crown aria-hidden="true" />
+              IMPORTS
+              <Crown aria-hidden="true" />
+            </small>
+          </Link>
+
+          <div className="contact-mobile-sitebar__tools" aria-label="Acoes mobile">
+            <Link to="/loja" aria-label="Carrinho">
+              <ShoppingCart aria-hidden="true" />
+            </Link>
+          </div>
+        </header>
+
         <div className="contact-mobile-exact-stage">
           <img
             className="contact-mobile-exact-art"

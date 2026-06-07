@@ -2,7 +2,15 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
   ArrowRight,
+  BadgeCheck,
+  Crown,
+  Gem,
+  Headphones,
+  LockKeyhole,
   PackageCheck,
+  ShieldCheck,
+  Shirt,
+  Truck,
 } from "lucide-react";
 import { ProductCard } from "@/components/ProductCard";
 import { getProducts } from "@/lib/api";
@@ -135,14 +143,25 @@ function LojaPage() {
             <span>Importados &</span>
             <strong>Street Luxury</strong>
           </h2>
-          <p>Produtos selecionados para quem busca exclusividade, estilo e presenca.</p>
+          <div className="collection-mobile-divider" aria-hidden="true">
+            <span />
+            <Crown />
+            <span />
+          </div>
+          <p>
+            Produtos selecionados para quem busca{" "}
+            <span>exclusividade, estilo e presenca.</span>
+          </p>
           <div className="collection-mobile-actions" aria-label="Acoes da colecao no mobile">
             <a href="#produtos" className="collection-primary-action">
-              Ver colecao premium
+              <Gem aria-hidden="true" />
+              <span>Ver colecao premium</span>
               <ArrowRight className="h-5 w-5" />
             </a>
             <a href="/contato" className="collection-secondary-action">
-              Como funciona
+              <Shirt aria-hidden="true" />
+              <span>Como funciona</span>
+              <ArrowRight className="h-5 w-5" />
             </a>
           </div>
         </div>
@@ -160,6 +179,35 @@ function LojaPage() {
               Como funciona
             </a>
           </div>
+        </div>
+      </section>
+
+      <section className="collection-mobile-assurance" aria-label="Vantagens da DA MAFIA IMPORTS">
+        <div className="collection-mobile-trust">
+          <article>
+            <Truck aria-hidden="true" />
+            <strong>Envio rapido</strong>
+            <span>Para todo o Brasil</span>
+          </article>
+          <article>
+            <ShieldCheck aria-hidden="true" />
+            <strong>Compra segura</strong>
+            <span>Ambiente 100% protegido</span>
+          </article>
+          <article>
+            <BadgeCheck aria-hidden="true" />
+            <strong>Produtos originais</strong>
+            <span>Importados de qualidade</span>
+          </article>
+          <article>
+            <Headphones aria-hidden="true" />
+            <strong>Atendimento premium</strong>
+            <span>Suporte dedicado</span>
+          </article>
+        </div>
+        <div className="collection-mobile-secure">
+          <LockKeyhole aria-hidden="true" />
+          <span>Site 100% seguro</span>
         </div>
       </section>
 

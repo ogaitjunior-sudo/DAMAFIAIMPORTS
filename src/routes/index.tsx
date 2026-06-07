@@ -5,10 +5,9 @@ import {
   Home,
   Menu,
   Package,
-  Search,
-  ShoppingBag,
   ShoppingCart,
   Ticket,
+  TicketCheck,
   User,
 } from "lucide-react";
 import { createFileRoute, Link } from "@tanstack/react-router";
@@ -54,9 +53,6 @@ function Index() {
           </Link>
 
           <div className="home-mobile-tools" aria-label="Acoes mobile">
-            <Link to="/loja" aria-label="Buscar produtos">
-              <Search aria-hidden="true" />
-            </Link>
             <Link to="/loja" aria-label="Carrinho">
               <ShoppingCart aria-hidden="true" />
             </Link>
@@ -77,13 +73,13 @@ function Index() {
 
         <div className="exact-template-actions" aria-label="Acoes principais">
           <Link className="exact-template-action exact-template-action--primary" to="/loja">
-            <ShoppingBag className="exact-template-action__icon" aria-hidden="true" />
+            <Package className="exact-template-action__icon" aria-hidden="true" />
             <span>VER PRODUTOS</span>
             <ArrowRight className="exact-template-action__arrow" aria-hidden="true" />
           </Link>
           <Link className="exact-template-action exact-template-action--secondary" to="/rifas">
             <span>PARTICIPAR DAS RIFAS</span>
-            <Ticket className="exact-template-action__ticket" aria-hidden="true" />
+            <TicketCheck className="exact-template-action__ticket" aria-hidden="true" />
           </Link>
         </div>
 
