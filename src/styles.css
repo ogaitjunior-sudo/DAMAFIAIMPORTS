@@ -13221,7 +13221,7 @@ body:has(.collection-aaa) .site-header + main {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px), ((orientation: portrait) and (pointer: coarse)) {
   html:has(.exact-template-home),
   body:has(.exact-template-home),
   body:has(.exact-template-home) main,
@@ -15537,7 +15537,7 @@ body:has(.contact-exact-page) .site-header {
 
 /* Exact full-screen mobile home reference. The visible chrome lives in the
    reference art while the real controls remain aligned and interactive. */
-@media (max-width: 768px) {
+@media (max-width: 768px), ((orientation: portrait) and (pointer: coarse)) {
   .exact-template-home__stage {
     --home-mobile-topbar: 7.55%;
     --home-mobile-bottom-nav: 5.86%;
